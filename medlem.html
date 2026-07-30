@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07101e">
+  <meta name="description" content="Medlemsportal för Pamir VBK.">
+  <title>Medlemsportal | Pamir VBK</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="portal-body">
+<header class="header portal-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><img src="assets/pamir-logo.png" alt="Pamir VBK"><span><strong>Pamir VBK</strong><small>Medlemsportal</small></span></a>
+    <nav class="portal-nav"><a href="index.html">Till hemsidan</a><button id="logoutBtn" class="pill logout" hidden>Logga ut</button></nav>
+  </div>
+</header>
+<main class="portal-main">
+  <section id="loginView" class="portal-login wrap">
+    <div class="login-copy"><p class="kicker">Pamir VBK</p><h1>Din medlemsportal</h1><p>Se din profil, licens, avgifter och status för din matchtröja.</p><div class="portal-points"><span>✓ Licensstatus</span><span>✓ Medlems- och träningsavgift</span><span>✓ Matchtröja</span></div></div>
+    <form id="loginForm" class="login-card">
+      <img src="assets/pamir-logo.png" alt="" class="login-logo">
+      <h2>Logga in</h2>
+      <label>E-post<input type="email" name="email" autocomplete="username" required placeholder="din@email.se"></label>
+      <label>Lösenord<input type="password" name="password" autocomplete="current-password" required placeholder="Ditt lösenord"></label>
+      <button class="btn primary full" type="submit">Logga in</button>
+      <p id="loginError" class="login-error" role="alert"></p>
+      <details class="demo-info"><summary>Visa testkonto</summary><p>E-post: medlem@pamirvbk.se<br>Lösenord: Pamir2026</p></details>
+    </form>
+  </section>
+
+  <section id="dashboardView" class="dashboard wrap" hidden>
+    <div class="dashboard-top">
+      <div><p class="kicker">MINA SIDOR</p><h1>Hej, <span id="memberFirstName"></span></h1><p>Här ser du din information för säsongen 2026/27.</p></div>
+      <div class="member-badge"><span id="memberInitials"></span><div><b id="memberNameTop"></b><small id="memberTeamTop"></small></div></div>
+    </div>
+    <div class="dashboard-grid">
+      <article class="dash-card profile-card"><div class="card-head"><span>PROFIL</span><b id="profileStatus">Aktiv medlem</b></div><dl class="profile-list"><div><dt>Namn</dt><dd id="profileName"></dd></div><div><dt>E-post</dt><dd id="profileEmail"></dd></div><div><dt>Telefon</dt><dd id="profilePhone"></dd></div><div><dt>Lag</dt><dd id="profileTeam"></dd></div><div><dt>Medlemsnummer</dt><dd id="profileId"></dd></div></dl></article>
+      <article class="dash-card status-card"><div class="card-head"><span>LICENS</span><b class="paid" id="licenseBadge">Aktiv</b></div><div class="status-row"><div class="status-icon">✓</div><div><h2>Spelarlicens aktiv</h2><p>Licenstyp: Senior</p><p>Giltig till <span id="licenseUntil">2027-06-30</span></p></div></div></article>
+      <article class="dash-card fee-card"><div class="card-head"><span>AVGIFTER</span><b class="paid">Uppdaterad</b></div><div class="fee-line"><div><strong>Medlemsavgift</strong><span><span id="memberFeePaid">250 kr av 250 kr</span></span></div><b class="fee-ok">Betald</b></div><div class="progress"><span style="width:100%"></span></div><div class="fee-line"><div><strong>Träningsavgift</strong><span>1 500 kr av 2 000 kr</span></div><b class="fee-due"><span id="trainingFeeRemaining">500 kr kvar</span></b></div><div class="progress"><span style="width:75%"></span></div><p class="fine">Betalningar registreras av föreningens administratör.</p></article>
+      <article class="dash-card shirt-card"><div class="card-head"><span>MATCHTRÖJA</span><b id="shirtBadge"></b></div><div class="shirt-summary"><div><span>Storlek</span><strong>M</strong></div><div><span>Status</span><strong id="shirtStatus">Beställd</strong></div><div><span>Leverans</span><strong>Klubben</strong></div></div><h2>Välj tröjnummer</h2><p>Gröna nummer är lediga. Upptagna nummer går inte att välja.</p><div id="numberGrid" class="number-grid"></div><button id="saveNumberBtn" class="btn primary full" disabled>Spara tröjnummer</button><p id="numberMessage" class="number-message"></p></article>
+      <article class="dash-card info-card"><div class="card-head"><span>TRÄNING & MATCH</span></div><div class="mini-schedule"><div><b>Torsdag</b><span>21:00–23:00</span></div><div><b>Lördag</b><span>18:00–20:00</span></div></div><p><strong>Plats:</strong> Silverdalshallen</p><p>Hemmamatcher spelas också i Silverdalshallen.</p><a href="index.html#matcher" class="text-link">Se kommande matcher</a></article>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-grid"><div class="brand footer-brand"><img src="assets/pamir-logo.png" alt=""><span><strong>Pamir VBK</strong><small>Volleyboll i Sollentuna</small></span></div><p>Medlemsportal, lokal demonstrationsversion.</p></div></footer>
+<script src="member.js"></script>
+</body>
+</html>
