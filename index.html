@@ -13,7 +13,7 @@
 
 .brand img{object-fit:contain;background:#fff;border-radius:50%;padding:3px}
 .photo-hero{min-height:700px;display:flex;align-items:center;background:#07101e}
-.hero-photo{position:absolute;inset:0;background:url('assets/laget.webp') center 42%/cover no-repeat;filter:saturate(.92)}
+.hero-photo{position:absolute;inset:0;background:url('assets/laget.webp') center 42%/cover no-repeat, url('assets/hero-team.jpg') center 42%/cover no-repeat;filter:saturate(.92)}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,12,24,.96) 0%,rgba(5,12,24,.84) 46%,rgba(5,12,24,.28) 76%,rgba(5,12,24,.5) 100%)}
 .photo-hero:after{display:none}.photo-hero .hero-grid{grid-template-columns:1.25fr .7fr}.photo-hero .hero-copy{max-width:780px}.glass{color:#fff;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
 .next-card-dark{background:rgba(8,18,33,.86);color:#fff;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(16px)}
@@ -53,8 +53,6 @@
 @media(max-width:1100px){.header .brand{min-width:auto}.header .brand img{width:60px;height:60px}.nav{min-height:78px}}
 @media(max-width:850px){.header .brand img{width:56px;height:56px}.nav nav{top:78px;max-height:calc(100vh - 78px);overflow-y:auto}.nav{min-height:78px}.menu{min-width:72px;min-height:44px}}
 @media(max-width:520px){.header .brand img{width:52px;height:52px}.header .brand strong{font-size:17px}.header .brand small{display:none}.brand{gap:8px}.nav{min-height:70px}.nav nav{top:70px;max-height:calc(100vh - 70px)}.hero{padding-top:58px}.actions{flex-direction:column}.actions .btn{width:100%}.notice .wrap{gap:8px}.photo-grid{grid-auto-rows:220px}}
-
-.hero-photo{background-image:url("assets/hero-team.jpg")!important;background-position:center 45%!important}
 
 .admin-body{background:#f2f5f9}.admin-shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh}.admin-sidebar{background:#0b1728;color:#fff;padding:26px 20px;position:sticky;top:0;height:100vh}.admin-brand{display:flex;align-items:center;gap:12px;margin-bottom:34px}.admin-brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:15px;padding:4px}.admin-brand strong{display:block;font-size:19px}.admin-brand small{color:#aeb9c8}.admin-menu{display:grid;gap:7px}.admin-menu a{color:#dbe3ee;padding:12px 14px;border-radius:12px;font-weight:800}.admin-menu a:hover,.admin-menu a.active{background:#172840;color:#fff}.admin-main{padding:34px;max-width:1400px;width:100%;margin:auto}.admin-top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:28px}.admin-top h1{font-size:42px;margin:0}.admin-top p{color:var(--muted);margin:5px 0 0}.admin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}.admin-stat{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.admin-stat span{color:var(--muted);font-size:13px}.admin-stat strong{display:block;font-size:32px;margin-top:8px}.admin-panels{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.admin-panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;margin-bottom:20px}.admin-panel h2{margin-top:0}.admin-form{display:grid;gap:14px}.admin-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.admin-form label{display:grid;gap:7px;font-weight:800;font-size:14px}.admin-form input,.admin-form select,.admin-form textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit}.admin-form textarea{min-height:100px;resize:vertical}.admin-save{border:0;border-radius:12px;padding:13px 18px;background:var(--orange);color:#fff;font-weight:900;cursor:pointer}.admin-note{font-size:13px;color:var(--muted);margin-top:12px}.member-table{width:100%;border-collapse:collapse}.member-table th,.member-table td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--line);font-size:14px}.status-chip{display:inline-block;padding:6px 9px;border-radius:999px;font-size:12px;font-weight:900}.status-chip.ok{background:#e9f7ef;color:#157347}.status-chip.warn{background:#fff2e8;color:#a94700}.admin-login{min-height:100vh;display:grid;place-items:center;padding:30px;background:#f2f5f9}.admin-login-card{width:min(430px,100%);background:#fff;padding:36px;border-radius:26px;box-shadow:0 25px 70px rgba(7,16,30,.14)}.admin-login-card img{display:block;width:90px;margin:0 auto 15px}.admin-login-card h1{text-align:center}.admin-login-card form{display:grid;gap:14px}.admin-login-card label{display:grid;gap:7px;font-weight:800}.admin-login-card input{padding:13px;border:1px solid var(--line);border-radius:12px;font:inherit}.admin-login-error{color:#b42318;min-height:20px;text-align:center;font-weight:800}.admin-toast{position:fixed;right:24px;bottom:24px;background:#0b1728;color:#fff;padding:14px 18px;border-radius:14px;box-shadow:0 14px 35px rgba(0,0,0,.25);opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s}.admin-toast.show{opacity:1;transform:none}
 @media(max-width:1050px){.admin-grid{grid-template-columns:repeat(2,1fr)}.admin-panels{grid-template-columns:1fr}}
@@ -128,7 +126,7 @@ footer{background:#03142f;border-top:1px solid rgba(255,255,255,.1)}
 <header class="header" id="start">
 <div class="wrap nav">
 <a aria-label="Gå till början av startsidan" class="brand" data-home-link="" href="#top">
-<img alt="Pamir VBK" src="assets/pamir-logo.png"/>
+<img alt="Pamir VBK" src="assets/logo.png" onerror="this.onerror=null;this.src='assets/pamir-logo.png';"/>
 <span><strong>Pamir VBK</strong><small>Volleyboll i Sollentuna</small></span>
 </a>
 <button aria-controls="mainnav" aria-expanded="false" class="menu">Meny</button>
@@ -320,3 +318,324 @@ footer{background:#03142f;border-top:1px solid rgba(255,255,255,.1)}
 </div>
 <button class="btn primary" type="submit">Logga in</button>
 <p class="admin-login-error" id="inlineAdminError"></p>
+</form>
+</div>
+<div class="inline-admin-app" hidden="" id="inlineAdminApp">
+<div class="inline-admin-toolbar"><strong>Du är inloggad som administratör</strong><button class="btn outline-dark" id="inlineAdminLogout" type="button">Logga ut</button></div>
+
+
+<div aria-label="Adminområden" class="admin-tabs" role="tablist">
+<button class="admin-tab active" data-admin-tab="content" type="button">Texter</button>
+<button class="admin-tab" data-admin-tab="matches" type="button">Matcher</button>
+<button class="admin-tab" data-admin-tab="news" type="button">Nyheter</button>
+<button class="admin-tab" data-admin-tab="settings" type="button">Kontakt &amp; övrigt</button>
+</div>
+<div class="admin-panel-section active" data-admin-panel="content">
+<form class="inline-admin-card admin-wide-form" id="inlineContentForm">
+<h3>Ändra hemsidans texter</h3>
+<div class="inline-admin-row"><label>Stor rubrik på startsidan<textarea name="heroTitle" rows="3"></textarea></label><label>Ingress på startsidan<textarea name="heroLead" rows="3"></textarea></label></div>
+<div class="inline-admin-row"><label>Informationsrad – rubrik<input name="noticeTitle"/></label><label>Informationsrad – text<input name="noticeText"/></label></div>
+<h4>Lag</h4>
+<div class="inline-admin-row"><label>Division 2 – lagnamn<input name="team1Name"/></label><label>Division 2 – beskrivning<textarea name="team1Text" rows="2"></textarea></label></div>
+<div class="inline-admin-row"><label>Division 3 – lagnamn<input name="team2Name"/></label><label>Division 3 – beskrivning<textarea name="team2Text" rows="2"></textarea></label></div>
+<h4>Träning</h4>
+<div class="inline-admin-row"><label>Rubrik<input name="trainingTitle"/></label><label>Introduktion<textarea name="trainingIntro" rows="2"></textarea></label></div>
+<div class="inline-admin-row"><label>Torsdagstid<input name="trainingThursday"/></label><label>Lördagstid<input name="trainingSaturday"/></label></div>
+<label>Träningshall<input name="hall"/></label>
+<h4>Bli medlem</h4>
+<div class="inline-admin-row"><label>Rubrik<input name="memberTitle"/></label><label>Introduktion<textarea name="memberIntro" rows="3"></textarea></label></div>
+<label>Medlemsavgift, kr<input name="memberFee" type="number"/></label>
+<h4>Om oss</h4>
+<label>Rubrik<input name="aboutTitle"/></label>
+<label>Första stycket<textarea name="aboutText1" rows="4"></textarea></label>
+<label>Andra stycket<textarea name="aboutText2" rows="4"></textarea></label>
+<button class="btn primary" type="submit">Spara alla texter</button><p class="admin-note" id="inlineContentMessage"></p>
+</form>
+</div>
+<div class="admin-panel-section" data-admin-panel="matches">
+<form class="inline-admin-card admin-wide-form" id="inlineMatchesForm">
+<h3>Ändra kommande matcher</h3>
+<p class="admin-help">Fyll i datum, tid, motståndare och om det är hemma eller borta. Gamla matcher filtreras bort automatiskt på hemsidan.</p>
+<div id="matchAdminFields"></div>
+<button class="btn primary" type="submit">Spara matcher</button><p class="admin-note" id="inlineMatchesMessage"></p>
+</form>
+</div>
+<div class="admin-panel-section" data-admin-panel="news">
+<div class="inline-admin-grid">
+<form class="inline-admin-card" id="inlineNewsForm">
+<h3>Lägg till en nyhet</h3>
+<label>Datum<input name="date" required="" type="date"/></label>
+<label>Rubrik<input name="title" required=""/></label>
+<label>Nyhetstext<textarea name="text" required="" rows="5"></textarea></label>
+<label>Länk (valfritt)<input name="link" placeholder="https://..."/></label>
+<button class="btn primary" type="submit">Publicera nyhet</button><p class="admin-note" id="inlineNewsMessage"></p>
+</form>
+<div class="inline-admin-card"><h3>Publicerade nyheter</h3><div class="admin-news-list" id="adminNewsList"></div></div>
+</div>
+</div>
+<div class="admin-panel-section" data-admin-panel="settings">
+<form class="inline-admin-card admin-wide-form" id="inlineSettingsForm">
+<h3>Kontakt, sponsorer och statistik</h3>
+<div class="inline-admin-row"><label>Kontakt-rubrik<input name="contactTitle"/></label><label>Kontakttext<textarea name="contactText" rows="2"></textarea></label></div>
+<label>Klubbens e-post<input name="contactEmail" type="email"/></label>
+<div class="inline-admin-row"><label>Antal aktiva medlemmar<input name="activeMembers" type="number"/></label><label>Sponsor 1<input name="sponsor1"/></label></div>
+<label>Sponsor 2<input name="sponsor2"/></label>
+<button class="btn primary" type="submit">Spara uppgifter</button><p class="admin-note" id="inlineSettingsMessage"></p>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap footer-grid">
+<div class="brand footer-brand"><img alt="" src="assets/logo.png" onerror="this.onerror=null;this.src='assets/pamir-logo.png';"/><span><strong>Pamir VBK</strong><small>Volleyboll i Sollentuna</small></span></div>
+<p>© <span id="year"></span> Pamir Häggvik Volleybollklubb</p>
+<div class="footer-links"><a href="mailto:pamir.vbk@gmail.com">Kontakt</a><a href="integritet.html">Integritet</a><button aria-controls="admin" aria-expanded="false" class="footer-admin-link" id="footerAdminButton" type="button">🔒 Admin</button></div>
+</div>
+</footer>
+<dialog id="shirtDialog"><form id="shirtForm" method="dialog"><button aria-label="Stäng" class="close" value="cancel">×</button><h2>Beställ klubbtröja</h2><label>Namn<input name="memberName" required=""/></label><label>Storlek<select name="size" required=""><option value="">Välj storlek</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></label><label>Namn på tröjan<input name="printName" required=""/></label><label>Tröjnummer<input max="99" min="0" name="number" required="" type="number"/></label><button class="btn primary full" value="default">Skicka beställning</button><p class="form-help">Ett färdigt mejl öppnas till föreningen.</p></form></dialog>
+<script>
+
+const menu=document.querySelector('.menu'),nav=document.querySelector('#mainnav');
+menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+document.querySelectorAll('#mainnav a').forEach(a=>a.addEventListener('click',()=>{nav?.classList.remove('open');menu?.setAttribute('aria-expanded','false');}));
+document.querySelectorAll('.nav-group>button').forEach(button=>button.addEventListener('click',()=>button.parentElement.classList.toggle('open')));
+document.querySelectorAll('[data-home-link]').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}));
+document.querySelector('#year').textContent=new Date().getFullYear();
+
+function encodeForm(form){return new URLSearchParams(new FormData(form)).toString();}
+async function submitNetlifyForm(form,status,successText){
+ const button=form.querySelector('button[type="submit"]');
+ const original=button.textContent;
+ button.disabled=true; button.textContent='Skickar…'; status.textContent=''; status.className='form-status';
+ try{
+   const response=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:encodeForm(form)});
+   if(!response.ok) throw new Error('Kunde inte skicka formuläret');
+   form.reset(); status.textContent=successText; status.className='form-status success';
+ }catch(err){
+   status.textContent='Det gick inte att skicka just nu. Försök igen eller mejla pamir.vbk@gmail.com.'; status.className='form-status error';
+ }finally{button.disabled=false;button.textContent=original;}
+}
+document.querySelector('#memberForm')?.addEventListener('submit',e=>{e.preventDefault();submitNetlifyForm(e.currentTarget,document.querySelector('#memberFormStatus'),'Tack för din anmälan! Vi återkommer så snart vi kan.');});
+document.querySelector('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();submitNetlifyForm(e.currentTarget,document.querySelector('#contactFormStatus'),'Tack för ditt meddelande! Vi återkommer så snart vi kan.');});
+
+const dialog=document.querySelector('#shirtDialog');document.querySelector('#shirtButton')?.addEventListener('click',()=>dialog?.showModal());
+document.querySelector('#shirtForm')?.addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget);location.href=`mailto:pamir.vbk@gmail.com?subject=${encodeURIComponent('Beställning av klubbtröja')}&body=${encodeURIComponent(`Namn: ${f.get('memberName')}
+Storlek: ${f.get('size')}
+Namn på tröjan: ${f.get('printName')}
+Nummer: ${f.get('number')}`)}`;dialog.close();});
+
+(function(){
+  const defaults={
+    heroTitle:'Volleyboll.\nGemenskap.\nPamir.',
+    heroLead:'Vi spelar herrvolleyboll i division 2 och division 3. Hos oss möts ambition, glädje och lagkänsla.',
+    noticeTitle:'Division 2 och Division 3, säsongen 2026/27.',
+    noticeText:'Nya spelare och stödmedlemmar är välkomna till Pamir VBK.',
+    team1Name:'Pamir VBK',team1Text:'Division 2 Mellersta Östra Herrar.',
+    team2Name:'Pamir VBK B',team2Text:'Division 3 Östra, Nord Herrar.',
+    trainingTitle:'Träningar',trainingIntro:'Kom ombytt och i god tid. Ta med inomhusskor och vattenflaska.',
+    trainingThursday:'21:00–23:00',trainingSaturday:'18:00–20:00',hall:'Silverdalshallen',
+    memberTitle:'Välkommen till Pamir VBK',memberIntro:'Skicka din intresseanmälan direkt till klubben. Du får svar med information om provträning, lag och medlemskap.',memberFee:250,
+    aboutTitle:'Gemenskap, ansvar och utveckling',
+    aboutText1:'Pamir Häggvik Volleybollklubb startades 2025 av ett kompisgäng med en gemensam kärlek till volleyboll. I dag har föreningen cirka 25 aktiva medlemmar.',
+    aboutText2:'Vi tränar, spelar seriespel i division 2 och division 3 samt arrangerar turneringar flera gånger per år. Hos oss står gemenskap, respekt, utveckling och glädje i centrum.',
+    contactTitle:'Hör av dig till oss',contactText:'Frågor om träning, medlemskap, matcher, sponsring eller samarbete.',contactEmail:'pamir.vbk@gmail.com',
+    activeMembers:25,sponsor1:'PowerWay AB',sponsor2:'Sultani Restaurang'
+  };
+  const defaultMatches=[
+    {id:'div2_1',date:'2026-10-03',time:'08:00',opponent:'Södermalms VBK D',venue:'Hemma'},
+    {id:'div2_2',date:'2026-10-03',time:'08:00',opponent:'Säters IF VBK',venue:'Hemma'},
+    {id:'div2_3',date:'2026-10-17',time:'09:45',opponent:'KTH VBF',venue:'Borta'},
+    {id:'div3_1',date:'2026-09-27',time:'12:00',opponent:'Hästhagen IF D',venue:'Borta'},
+    {id:'div3_2',date:'2026-09-27',time:'14:30',opponent:'Södermalms VBK G',venue:'Borta'},
+    {id:'div3_3',date:'2026-10-04',time:'10:15',opponent:'Täby Volley',venue:'Borta'}
+  ];
+  window.PAMIR_DEFAULTS=defaults;
+  window.PAMIR_DEFAULT_MATCHES=defaultMatches;
+  const saved=JSON.parse(localStorage.getItem('pamirSiteSettings')||'{}');
+  const data={...defaults,...saved};
+  window.PAMIR_DATA=data;
+
+  document.querySelectorAll('[data-content]').forEach(el=>{
+    const key=el.dataset.content;
+    if(data[key]===undefined) return;
+    if(key==='heroTitle') el.innerHTML=String(data[key]).split('\n').map(x=>x.trim()).join('<br>');
+    else el.textContent=data[key];
+  });
+  document.querySelectorAll('.schedule article').forEach((el,i)=>{
+    const b=el.querySelector('b'),p=el.querySelector('p');
+    if(b)b.textContent=i===0?data.trainingThursday:data.trainingSaturday;
+    if(p)p.textContent=data.hall;
+  });
+  const price=document.querySelector('.price b');if(price)price.textContent=data.memberFee+' kr';
+  document.querySelectorAll('.stats div').forEach(x=>{if(x.querySelector('span')?.textContent.includes('aktiva'))x.querySelector('b').textContent=data.activeMembers});
+  const sponsors=document.querySelectorAll('.sponsor-card h3');if(sponsors[0])sponsors[0].textContent=data.sponsor1;if(sponsors[1])sponsors[1].textContent=data.sponsor2;
+  document.querySelectorAll('a[href^="mailto:pamir.vbk@gmail.com"]').forEach(a=>a.href=a.href.replace('pamir.vbk@gmail.com',data.contactEmail));
+
+  function renderMatches(){
+    const matches=JSON.parse(localStorage.getItem('pamirMatches')||'null')||defaultMatches;
+    const nu = new Date();
+
+    // 1. Filtrera bort alla matcher som redan har spelats
+    const kommande = matches.filter(m => {
+      const matchDatum = new Date(`${m.date}T${m.time}:00`);
+      return matchDatum >= nu;
+    });
+
+    // 2. Sortera i kronologisk ordning
+    kommande.sort((a,b) => new Date(`${a.date}T${a.time}:00`) - new Date(`${b.date}T${b.time}:00`));
+
+    // 3. Rendera matcher för Division 2
+    const div2Container = document.getElementById('div2-matches-container');
+    if(div2Container) {
+      const div2Matches = kommande.filter(m => m.id.startsWith('div2')).slice(0, 3);
+      if(div2Matches.length === 0) {
+        div2Container.innerHTML = '<p style="color:#aeb7c5; padding: 15px 0;">Inga kommande matcher just nu.</p>';
+      } else {
+        div2Container.innerHTML = div2Matches.map(m => createMatchCardHTML(m, data.team1Name)).join('');
+      }
+    }
+
+    // 4. Rendera matcher för Division 3
+    const div3Container = document.getElementById('div3-matches-container');
+    if(div3Container) {
+      const div3Matches = kommande.filter(m => m.id.startsWith('div3')).slice(0, 3);
+      if(div3Matches.length === 0) {
+        div3Container.innerHTML = '<p style="color:#aeb7c5; padding: 15px 0;">Inga kommande matcher just nu.</p>';
+      } else {
+        div3Container.innerHTML = div3Matches.map(m => createMatchCardHTML(m, data.team2Name)).join('');
+      }
+    }
+
+    // 5. Uppdatera rutan "NÄSTA MATCH" i hero-sektionen med den absolut närmaste matchen
+    const first = kommande[0];
+    const next = document.querySelector('.next-card');
+    if(next) {
+      if(first) {
+        const d = new Date(`${first.date}T${first.time}:00`);
+        next.querySelector('.datebox b').textContent = String(d.getDate()).padStart(2,'0');
+        next.querySelector('.datebox small').textContent = d.toLocaleDateString('sv-SE',{month:'short'}).replace('.','').toUpperCase();
+        next.querySelector('h2').textContent = first.id.startsWith('div2') ? 'Division 2' : 'Division 3';
+        const team = first.id.startsWith('div2') ? data.team1Name : data.team2Name;
+        next.querySelector('div p').textContent = first.venue === 'Hemma' ? `${team} mot ${first.opponent}` : `${first.opponent} mot ${team}`;
+        next.querySelector('strong').textContent = `${d.toLocaleDateString('sv-SE',{weekday:'long',day:'numeric',month:'long'})}, kl. ${first.time}`;
+      } else {
+        next.querySelector('.datebox b').textContent = '--';
+        next.querySelector('.datebox small').textContent = '---';
+        next.querySelector('h2').textContent = 'Matcher';
+        next.querySelector('div p').textContent = 'Inga kommande matcher just nu.';
+        next.querySelector('strong').textContent = '-';
+      }
+    }
+  }
+
+  function createMatchCardHTML(m, teamName) {
+    const d = new Date(`${m.date}T${m.time}:00`);
+    const day = String(d.getDate()).padStart(2,'0');
+    const mon = d.toLocaleDateString('sv-SE',{month:'short'}).replace('.','').toUpperCase();
+    const year = d.getFullYear();
+    const home = m.venue === 'Hemma';
+    const titleText = home ? `${teamName} <i>mot</i> ${m.opponent}` : `${m.opponent} <i>mot</i> ${teamName}`;
+    const weekdayStr = d.toLocaleDateString('sv-SE',{weekday:'long'});
+    const capitalizedWeekday = weekdayStr.charAt(0).toUpperCase() + weekdayStr.slice(1);
+
+    return `
+      <a class="match-card" data-match="${m.id}" href="https://www.profixio.com/app/lx/clubs/30759?t=schedule" rel="noopener" target="_blank">
+        <time datetime="${m.date}T${m.time}"><b>${day}</b><span>${mon}<br/>${year}</span></time>
+        <div><em>${home ? 'Hemmalag' : 'Bortamatch'}</em><h4>${titleText}</h4><p>${capitalizedWeekday}, kl. ${m.time}</p></div>
+        <span class="arrow">↗</span>
+      </a>
+    `;
+  }
+
+  function renderNews(){
+    const grid=document.querySelector('.news-grid'); if(!grid)return;
+    const custom=JSON.parse(localStorage.getItem('pamirNews')||'[]');
+    if(!custom.length)return;
+    grid.innerHTML='';
+    custom.slice(0,6).forEach((n,i)=>{
+      const article=document.createElement('article'); if(i===0)article.className='feature-news';
+      const date=n.date?new Date(n.date+'T12:00:00').toLocaleDateString('sv-SE',{day:'numeric',month:'long',year:'numeric'}):'';
+      article.innerHTML=`<span>${date}</span><h3></h3><p></p>${n.link?'<a target="_blank" rel="noopener">Läs mer</a>':''}`;
+      article.querySelector('h3').textContent=n.title; article.querySelector('p').textContent=n.text;
+      if(n.link)article.querySelector('a').href=n.link;
+      grid.appendChild(article);
+    });
+  }
+  renderMatches(); renderNews();
+})();
+
+(function(){
+  const defaults=window.PAMIR_DEFAULTS||{};
+  const defaultMatches=window.PAMIR_DEFAULT_MATCHES||[];
+  const login=document.querySelector('#inlineAdminLogin');
+  const app=document.querySelector('#inlineAdminApp');
+  const loginForm=document.querySelector('#inlineAdminLoginForm');
+  if(!loginForm)return;
+  const forms=['inlineContentForm','inlineSettingsForm'].map(id=>document.getElementById(id)).filter(Boolean);
+
+  function savedSettings(){return {...defaults,...JSON.parse(localStorage.getItem('pamirSiteSettings')||'{}')}}
+  function fillForms(){
+    const data=savedSettings();
+    forms.forEach(form=>Object.keys(data).forEach(k=>{if(form.elements[k])form.elements[k].value=data[k]}));
+  }
+  function showAdmin(){localStorage.setItem('pamirAdminSession','1');login.hidden=true;app.hidden=false;fillForms();renderMatchFields();renderAdminNews()}
+  loginForm.addEventListener('submit',e=>{e.preventDefault();const f=new FormData(loginForm);if(f.get('email')==='admin@pamirvbk.se'&&f.get('password')==='PamirAdmin2026')showAdmin();else document.querySelector('#inlineAdminError').textContent='Fel e-post eller lösenord.'});
+  document.querySelector('#inlineAdminLogout')?.addEventListener('click',()=>{localStorage.removeItem('pamirAdminSession');location.reload()});
+
+  forms.forEach(form=>form.addEventListener('submit',e=>{
+    e.preventDefault();const old=JSON.parse(localStorage.getItem('pamirSiteSettings')||'{}');
+    const data={...old,...Object.fromEntries(new FormData(form))};
+    ['memberFee','activeMembers'].forEach(k=>{if(data[k]!==undefined)data[k]=Number(data[k])});
+    localStorage.setItem('pamirSiteSettings',JSON.stringify(data));
+    const msg=form.id==='inlineContentForm'?'inlineContentMessage':'inlineSettingsMessage';
+    document.getElementById(msg).textContent='Sparat. Sidan uppdateras nu.';
+    setTimeout(()=>location.reload(),500);
+  }));
+
+  document.querySelector('#inlineNewsForm')?.addEventListener('submit',e=>{
+    e.preventDefault();const item=Object.fromEntries(new FormData(e.currentTarget));item.id=Date.now();
+    const news=JSON.parse(localStorage.getItem('pamirNews')||'[]');news.unshift(item);localStorage.setItem('pamirNews',JSON.stringify(news));
+    document.querySelector('#inlineNewsMessage').textContent='Nyheten är publicerad.';e.currentTarget.reset();renderAdminNews();
+  });
+  function renderAdminNews(){
+    const list=document.getElementById('adminNewsList');if(!list)return;
+    const news=JSON.parse(localStorage.getItem('pamirNews')||'[]');
+    list.innerHTML=news.length?'':'<p>Inga egna nyheter ännu.</p>';
+    news.forEach(n=>{const row=document.createElement('div');row.className='admin-news-item';row.innerHTML='<div><strong></strong><small></small></div><button type="button">Ta bort</button>';row.querySelector('strong').textContent=n.title;row.querySelector('small').textContent=n.date||'';row.querySelector('button').onclick=()=>{localStorage.setItem('pamirNews',JSON.stringify(news.filter(x=>x.id!==n.id)));renderAdminNews()};list.appendChild(row)});
+  }
+  function renderMatchFields(){
+    const host=document.getElementById('matchAdminFields');if(!host)return;
+    const matches=JSON.parse(localStorage.getItem('pamirMatches')||'null')||defaultMatches;
+    host.innerHTML='';
+    ['div2','div3'].forEach(div=>{
+      const section=document.createElement('section');section.className='match-admin-group';section.innerHTML=`<h4>${div==='div2'?'Division 2':'Division 3'}</h4>`;
+      matches.filter(m=>m.id.startsWith(div)).forEach((m,i)=>{
+        const row=document.createElement('div');row.className='match-admin-row';row.innerHTML=`<strong>Match ${i+1}</strong><label>Datum<input type="date" name="${m.id}_date" value="${m.date}"></label><label>Tid<input type="time" name="${m.id}_time" value="${m.time}"></label><label>Motståndare<input name="${m.id}_opponent"></label><label>Plats<select name="${m.id}_venue"><option>Hemma</option><option>Borta</option></select></label>`;row.querySelector(`[name="${m.id}_opponent"]`).value=m.opponent;row.querySelector(`[name="${m.id}_venue"]`).value=m.venue;section.appendChild(row)});host.appendChild(section)
+    });
+  }
+  document.querySelector('#inlineMatchesForm')?.addEventListener('submit',e=>{
+    e.preventDefault();const f=new FormData(e.currentTarget);const matches=defaultMatches.map(m=>({id:m.id,date:f.get(m.id+'_date'),time:f.get(m.id+'_time'),opponent:f.get(m.id+'_opponent'),venue:f.get(m.id+'_venue')}));localStorage.setItem('pamirMatches',JSON.stringify(matches));document.getElementById('inlineMatchesMessage').textContent='Matcherna är sparade. Sidan uppdateras nu.';setTimeout(()=>location.reload(),500)
+  });
+  document.querySelectorAll('.admin-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.admin-tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.admin-panel-section').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelector(`[data-admin-panel="${btn.dataset.adminTab}"]`).classList.add('active')}));
+  if(localStorage.getItem('pamirAdminSession')==='1')showAdmin();
+})();
+
+</script>
+<script>
+    (() => {
+      const button = document.getElementById('footerAdminButton');
+      const panel = document.getElementById('admin');
+      if (!button || !panel) return;
+      button.addEventListener('click', () => {
+        const isOpen = !panel.hidden;
+        panel.hidden = isOpen;
+        button.setAttribute('aria-expanded', String(!isOpen));
+        button.textContent = isOpen ? '🔒 Admin' : '× Stäng admin';
+        if (!isOpen) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    })();
+  </script>
+</body>
+</html>
