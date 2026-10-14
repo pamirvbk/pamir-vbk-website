@@ -36,14 +36,12 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spaci
 h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .ingress{color:var(--dimma);max-width:56ch;margin-bottom:44px}
 
-/* ---------- Knappar ---------- */
 .knapp{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .15s,background .15s,color .15s;cursor:pointer;font-family:var(--text);font-size:1rem}
 .knapp--gul{background:var(--boll);color:var(--natt)}
 .knapp--gul:hover{transform:translateY(-2px);background:#ffe07a}
 .knapp--ram{border-color:var(--linje);color:var(--kalk)}
 .knapp--ram:hover{border-color:var(--boll);color:var(--boll)}
 
-/* ---------- Meny ---------- */
 .topp{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,26,58,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linje)}
 .topp .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logga{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -57,7 +55,6 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .meny .medlem a:hover{background:#ffe07a}
 .burgare{display:none;background:none;border:1px solid var(--linje);color:var(--kalk);width:46px;height:46px;border-radius:12px;cursor:pointer;font-size:1.3rem}
 
-/* ---------- Hero ---------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden;background:radial-gradient(ellipse at 75% 40%,var(--bana) 0%,var(--djup) 45%,var(--natt) 80%)}
 .hero__bild{position:absolute;inset:0;z-index:0}
 .hero__bild img{width:100%;height:100%;object-fit:cover;opacity:.35;mix-blend-mode:luminosity}
@@ -72,14 +69,12 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .hero__boll{width:min(360px,70%);justify-self:center;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:rulla 1.4s cubic-bezier(.2,.8,.2,1) both}
 @keyframes rulla{from{transform:translateX(120px) rotate(-300deg);opacity:0}to{transform:none;opacity:1}}
 
-/* ---------- Nästa match ---------- */
 .nasta{margin-top:-60px;position:relative;z-index:5;padding:0}
 .nasta__kort{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--kalk);color:var(--natt);border-radius:var(--rad);padding:26px 32px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .nasta__etikett{font-family:var(--display);font-weight:800;font-size:1.5rem;text-transform:uppercase;line-height:1;padding-right:28px;border-right:2px solid rgba(6,26,58,.15)}
 .nasta__lag{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.6rem);text-transform:uppercase;line-height:1}
 .nasta__info{color:#3a4d73;font-size:.98rem;margin-top:6px}
 
-/* ---------- Foto-platser ---------- */
 .foto{position:relative;overflow:hidden;border-radius:var(--rad);background:
   var(--boll-bild) center 55%/28% no-repeat,
   repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.06) 79px 80px),
@@ -87,7 +82,19 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
   border:1px solid var(--linje)}
 .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-/* ---------- Om oss ---------- */
+/* Resultat & Tabell Styling */
+.resultat-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+.resultat-kort{background:var(--djup);border:1px solid var(--linje);border-radius:var(--rad);padding:24px}
+.resultat-rad{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--linje)}
+.resultat-rad:last-child{border-bottom:0}
+.resultat-poang{background:var(--boll);color:var(--natt);font-weight:800;padding:4px 12px;border-radius:8px;font-family:var(--display);font-size:1.2rem}
+
+.tabell-ram{background:#fff;color:var(--natt);border-radius:var(--rad);overflow:hidden;box-shadow:0 14px 40px rgba(6,26,58,.12);margin-top:20px}
+.serietabell{width:100%;border-collapse:collapse;text-align:left}
+.serietabell th,.serietabell td{padding:14px 18px;border-bottom:1px solid rgba(6,26,58,.1)}
+.serietabell th{background:var(--djup);color:var(--kalk);font-family:var(--display);font-size:1.1rem;letter-spacing:.05em}
+.serietabell tr.pamir-rad{background:#edf4ff;font-weight:700}
+
 .omoss .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
 .omoss h2{font-size:clamp(3rem,7vw,5.4rem)}
 .omoss p{color:#d3def2;max-width:58ch;margin-bottom:18px}
@@ -97,7 +104,6 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .värden strong{display:block;font-family:var(--display);font-size:1.6rem;text-transform:uppercase;line-height:1.05}
 .värden span{color:var(--dimma);font-size:.95rem}
 
-/* ---------- Lag ---------- */
 .lagrad{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .lag{background:var(--djup);border:1px solid var(--linje);border-radius:var(--rad);overflow:hidden;display:flex;flex-direction:column}
 .lag .foto{aspect-ratio:16/10;border:0;border-radius:0}
@@ -106,7 +112,6 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .lag h3{font-size:2.4rem;margin-bottom:8px}
 .lag p{color:var(--dimma)}
 
-/* ---------- Matcher ---------- */
 .matcher{background:var(--kalk);color:var(--natt)}
 .matcher .ingress{color:#47587c}
 .ram{border-radius:var(--rad);overflow:hidden;background:#fff;border:1px solid rgba(6,26,58,.12);box-shadow:0 14px 40px rgba(6,26,58,.12)}
@@ -115,7 +120,6 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .matcher .knapp--ram{border-color:rgba(6,26,58,.25);color:var(--natt)}
 .matcher .knapp--ram:hover{border-color:var(--natt);background:var(--natt);color:var(--kalk)}
 
-/* ---------- Träning ---------- */
 .traning .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .traning .foto{aspect-ratio:4/5}
 .pass{list-style:none;margin-top:8px}
@@ -125,7 +129,6 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .pass span{color:var(--dimma)}
 .pass em{display:block;font-style:normal;color:var(--kalk);font-weight:600}
 
-/* ---------- Bli medlem ---------- */
 .medlem-sek .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
 .medlem-sek h2{font-size:clamp(3rem,7vw,5.4rem)}
 .fordelar{list-style:none;margin-top:24px;display:grid;gap:12px}
@@ -141,7 +144,6 @@ textarea{min-height:110px;resize:vertical}
 .två{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .liten{font-size:.88rem;color:var(--dimma)}
 
-/* ---------- Kontakt ---------- */
 .kontakt{background:var(--kalk);color:var(--natt)}
 .kontakt .ingress{color:#47587c}
 .kontaktrad{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -149,11 +151,9 @@ textarea{min-height:110px;resize:vertical}
 .kontaktkort h3{font-size:1.5rem;margin-bottom:8px;color:var(--bana)}
 .kontaktkort a{font-weight:700;word-break:break-word}
 
-/* ---------- Fot ---------- */
 footer{padding:36px 0;border-top:1px solid var(--linje);color:var(--dimma);font-size:.92rem}
 footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 
-/* ---------- Mobil ---------- */
 @media (max-width:900px){
   section{padding:72px 0}
   .burgare{display:block}
@@ -161,7 +161,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .meny.öppen{display:flex}
   .meny a{padding:14px 10px;border-radius:10px}
   .meny .medlem a{margin:10px 0 0;text-align:center}
-  .hero .wrap{grid-template-columns:1fr}
+  .hero .wrap,.resultat-grid{grid-template-columns:1fr}
   .hero__boll{width:200px;justify-self:start;order:-1}
   .hero__bana{right:-40%;opacity:.35}
   .nasta{margin-top:-40px}
@@ -176,11 +176,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .två{grid-template-columns:1fr}
   .ram iframe{height:640px}
 }
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .hero__boll{animation:none}
-  *{transition:none!important}
-}
 </style>
 </head>
 <body>
@@ -189,13 +184,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 <header class="topp">
   <div class="wrap">
     <a class="logga" href="#top" aria-label="Pamir VBK, till toppen">
-      <img src="assets/logo.png" alt="Pamir VBK" onerror="this.src='assets/pamir-logo.png'">
+      <img src="assets/logo.png" alt="Pamir VBK" onerror="this.src='assets/pamir-logo.png';">
       <span><b>Pamir VBK</b><small>Volleyboll i Sollentuna</small></span>
     </a>
     <button class="burgare" id="burgare" aria-label="Öppna menyn" aria-expanded="false">☰</button>
     <ul class="meny" id="meny">
       <li><a href="#omoss">Om oss</a></li>
       <li><a href="#lag">Våra lag</a></li>
+      <li><a href="#resultat">Resultat & Tabell</a></li>
       <li><a href="#matcher">Matcher</a></li>
       <li><a href="#traning">Träningar</a></li>
       <li><a href="#bilder">Instagram</a></li>
@@ -246,10 +242,50 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
     <div class="nasta__kort">
       <div class="nasta__etikett">Nästa<br>match</div>
       <div>
-        <div class="nasta__lag">Pamir VBK – Säters IF VBK</div>
-        <div class="nasta__info">Silverdalshallen, Sollentuna</div>
+        <div class="nasta__lag" id="nextMatchTitle">Laddar nästa match...</div>
+        <div class="nasta__info" id="nextMatchInfo">Silverdalshallen, Sollentuna</div>
       </div>
       <a class="knapp knapp--gul" href="#matcher">Hela spelschemat</a>
+    </div>
+  </div>
+</section>
+
+<!-- SENASTE RESULTAT OCH TABELL -->
+<section id="resultat">
+  <div class="wrap">
+    <h2>Senaste Resultat</h2>
+    <p class="ingress">Resultat från de senast spelade matcherna i Division 2 och Division 3.</p>
+    
+    <div class="resultat-grid">
+      <div class="resultat-kort">
+        <h3 style="margin-bottom:15px; color:var(--boll);">Division 2</h3>
+        <div id="div2-results-list">
+          <div class="resultat-rad"><span>Pamir VBK 3 - 1 Säters IF VBK</span><span class="resultat-poang">3 - 1</span></div>
+          <div class="resultat-rad"><span>Södermalms VBK 0 - 3 Pamir VBK</span><span class="resultat-poang">0 - 3</span></div>
+        </div>
+      </div>
+      <div class="resultat-kort">
+        <h3 style="margin-bottom:15px; color:var(--boll);">Division 3</h3>
+        <div id="div3-results-list">
+          <div class="resultat-rad"><span>Hästhagen IF D 1 - 3 Pamir VBK B</span><span class="resultat-poang">1 - 3</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:50px;">Serietabell</h2>
+    <p class="ingress">Aktuell tabellställning för säsongen 2026/27.</p>
+    
+    <div class="tabell-ram">
+      <table class="serietabell">
+        <thead>
+          <tr><th>#</th><th>Lag</th><th>S</th><th>V</th><th>F</th><th>P</th></tr>
+        </thead>
+        <tbody>
+          <tr class="pamir-rad"><td>1</td><td>Pamir VBK A (Div 2)</td><td>2</td><td>2</td><td>0</td><td>6</td></tr>
+          <tr><td>2</td><td>Södermalms VBK D</td><td>2</td><td>1</td><td>1</td><td>3</td></tr>
+          <tr><td>3</td><td>Säters IF VBK</td><td>2</td><td>0</td><td>2</td><td>0</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -299,7 +335,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- MATCHER -->
+<!-- MATCHER (PROFIXIO) -->
 <section class="matcher" id="matcher">
   <div class="wrap">
     <h2>Kommande matcher</h2>
@@ -408,6 +444,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 </footer>
 
 <script>
+  // Mobilmeny
   var knapp = document.getElementById('burgare');
   var meny = document.getElementById('meny');
   knapp.addEventListener('click', function () {
@@ -417,6 +454,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   meny.addEventListener('click', function (e) {
     if (e.target.tagName === 'A') { meny.classList.remove('öppen'); knapp.setAttribute('aria-expanded', false); }
   });
+
+  // Skript som automatiskt filtrerar bort passerade matcher
+  (function updateNextMatch() {
+    const matches = [
+      { title: "Pamir VBK – Säters IF VBK", date: "2026-11-07T14:00:00", info: "Lördag 7 nov kl. 14:00 · Silverdalshallen" },
+      { title: "Pamir VBK – KTH VBF", date: "2026-11-21T14:00:00", info: "Lördag 21 nov kl. 14:00 · Silverdalshallen" }
+    ];
+
+    const now = new Date();
+    const upcoming = matches.filter(m => new Date(m.date) >= now).sort((a,b) => new Date(a.date) - new Date(b.date));
+
+    const titleEl = document.getElementById('nextMatchTitle');
+    const infoEl = document.getElementById('nextMatchInfo');
+
+    if (upcoming.length > 0) {
+      titleEl.textContent = upcoming[0].title;
+      infoEl.textContent = upcoming[0].info;
+    } else {
+      titleEl.textContent = "Inga kommande matcher just nu";
+      infoEl.textContent = "Se hela spelschemat hos Profixio nedan";
+    }
+  })();
 </script>
 </body>
 </html>
