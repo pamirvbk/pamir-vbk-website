@@ -1,220 +1,422 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="#061a3a" name="theme-color"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#061a3a">
 <title>Pamir VBK | Volleyboll i Sollentuna</title>
-<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta name="description" content="Pamir Häggvik Volleybollklubb spelar herrvolleyboll i division 2 och division 3. Hemmahall: Silverdalshallen i Sollentuna.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--ink:#061a3a;--muted:#58677d;--blue:#0d3f82;--blue-hover:#164f99;--soft:#f1f5fb;--line:#d8e1ed;--white:#fff;--wrap:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
-a{color:inherit}.wrap{width:min(var(--wrap),calc(100% - 40px));margin:auto}
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{min-height:88px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand img{width:60px;height:60px;object-fit:contain}
-.brand span{display:flex;flex-direction:column;line-height:1.15}.brand strong{font-size:20px;color:var(--ink)}.brand small{font-size:12px;color:var(--muted)}
-.nav nav{display:flex;align-items:center;gap:20px}.nav nav a{text-decoration:none;font-size:14px;font-weight:700;color:var(--ink)}
-.pill,.btn.primary{background:var(--blue);color:#fff!important;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:800;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
-.btn.primary:hover{background:var(--blue-hover)}
-.btn.glass{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:800}
-.hero{position:relative;background:#061a3a;color:#fff;padding:100px 0 80px;overflow:hidden}
-.hero-photo{position:absolute;inset:0;background:url('assets/laget.webp') center 42%/cover no-repeat, url('assets/hero-team.jpg') center 42%/cover no-repeat;opacity:.35}
-.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:center}
-.kicker{margin:0 0 10px;color:#3b82f6;font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
-.hero h1{font-size:clamp(40px,5.5vw,70px);line-height:1.05;margin:0 0 20px}
-.lead{font-size:18px;color:#c3d1e5;max-width:650px}
-.actions{display:flex;gap:14px;margin:30px 0}
-.next-card{background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:28px;color:#fff}
-.datebox{display:inline-flex;flex-direction:column;align-items:center;background:var(--blue);border-radius:14px;padding:10px 14px}
-.datebox b{font-size:30px;line-height:1}.datebox small{font-size:11px;font-weight:900;margin-top:4px}
-.section{padding:80px 0}.soft{background:var(--soft)}
-.heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}
-.heading h2{font-size:38px;margin:0;line-height:1.1}
-.news-grid,.team-grid,.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.news-grid article,.team-grid article,.tools article{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px}
-.division{display:inline-block;background:var(--ink);color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;font-weight:900}
-.dark-section{background:var(--ink);color:#fff}
-.match-column{background:#0e2548;border:1px solid #1e3a66;border-radius:20px;padding:24px}
-.match-card{display:grid;grid-template-columns:70px 1fr auto;gap:15px;align-items:center;padding:16px 0;border-top:1px solid #1e3a66;color:#fff;text-decoration:none}
-.contact{background:#e8eff9}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-footer{background:#03142f;color:#aeb7c5;padding:40px 0;border-top:1px solid rgba(255,255,255,.1)}
-.footer-grid{display:flex;justify-content:space-between;align-items:center}
-.embedded-admin{background:#edf3fb;border-top:4px solid var(--blue);padding:60px 0}
-.admin-card{background:#fff;border-radius:20px;padding:30px;border:1px solid var(--line);margin-bottom:20px}
-.admin-card label{display:grid;gap:6px;font-weight:700;margin-bottom:14px}
-.admin-card input,.admin-card textarea,.admin-card select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font:inherit}
-@media(max-width:850px){.hero-grid,.contact-grid{grid-template-columns:1fr}.nav nav{display:none}}
+:root{
+  --natt:#061a3a;
+  --djup:#0a2551;
+  --bana:#123b82;
+  --boll:#ffd23f;
+  --kalk:#f4f7fc;
+  --dimma:#a9b9d6;
+  --linje:rgba(255,255,255,.14);
+  --rad:18px;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --text:"Figtree",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --boll-bild:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Ccircle cx='50' cy='50' r='48'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23c)'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23ffd23f'/%3E%3Cpath d='M-5 35 Q50 10 105 35 M-5 68 Q50 95 105 68 M30 -5 Q60 50 30 105 M72 -5 Q42 50 72 105' fill='none' stroke='%231f5bc4' stroke-width='9'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='48' fill='none' stroke='%23061a3a' stroke-width='2.5'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--natt);color:var(--kalk);font-family:var(--text);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--boll);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+section{padding:96px 0}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
+.ingress{color:var(--dimma);max-width:56ch;margin-bottom:44px}
+
+/* ---------- Knappar ---------- */
+.knapp{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .15s,background .15s,color .15s;cursor:pointer;font-family:var(--text);font-size:1rem}
+.knapp--gul{background:var(--boll);color:var(--natt)}
+.knapp--gul:hover{transform:translateY(-2px);background:#ffe07a}
+.knapp--ram{border-color:var(--linje);color:var(--kalk)}
+.knapp--ram:hover{border-color:var(--boll);color:var(--boll)}
+
+/* ---------- Meny ---------- */
+.topp{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,26,58,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linje)}
+.topp .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logga{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logga img{height:42px;width:auto}
+.logga b{font-family:var(--display);font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.logga small{display:block;font-size:.72rem;color:var(--dimma);font-weight:500;letter-spacing:.02em}
+.meny{display:flex;align-items:center;gap:6px;list-style:none}
+.meny a{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;color:var(--dimma);transition:color .15s,background .15s}
+.meny a:hover{color:var(--kalk);background:rgba(255,255,255,.07)}
+.meny .medlem a{background:var(--boll);color:var(--natt);margin-left:8px}
+.meny .medlem a:hover{background:#ffe07a}
+.burgare{display:none;background:none;border:1px solid var(--linje);color:var(--kalk);width:46px;height:46px;border-radius:12px;cursor:pointer;font-size:1.3rem}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden;background:radial-gradient(ellipse at 75% 40%,var(--bana) 0%,var(--djup) 45%,var(--natt) 80%)}
+.hero__bild{position:absolute;inset:0;z-index:0}
+.hero__bild img{width:100%;height:100%;object-fit:cover;opacity:.35;mix-blend-mode:luminosity}
+.hero__bana{position:absolute;right:-8%;top:50%;width:min(980px,95vw);transform:translateY(-50%) perspective(900px) rotateX(38deg) rotateZ(-12deg);opacity:.5;z-index:1;pointer-events:none}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(4.6rem,13vw,10.5rem);line-height:.84;margin-bottom:26px}
+.hero h1 span{display:block}
+.hero h1 span:nth-child(2){padding-left:.5em}
+.hero h1 span:nth-child(3){padding-left:1em}
+.hero p.lead{font-size:1.2rem;max-width:44ch;color:#d3def2;margin-bottom:32px}
+.hero__knappar{display:flex;gap:14px;flex-wrap:wrap}
+.hero__boll{width:min(360px,70%);justify-self:center;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:rulla 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rulla{from{transform:translateX(120px) rotate(-300deg);opacity:0}to{transform:none;opacity:1}}
+
+/* ---------- Nästa match ---------- */
+.nasta{margin-top:-60px;position:relative;z-index:5;padding:0}
+.nasta__kort{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--kalk);color:var(--natt);border-radius:var(--rad);padding:26px 32px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.nasta__etikett{font-family:var(--display);font-weight:800;font-size:1.5rem;text-transform:uppercase;line-height:1;padding-right:28px;border-right:2px solid rgba(6,26,58,.15)}
+.nasta__lag{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.6rem);text-transform:uppercase;line-height:1}
+.nasta__info{color:#3a4d73;font-size:.98rem;margin-top:6px}
+
+/* ---------- Foto-platser ---------- */
+.foto{position:relative;overflow:hidden;border-radius:var(--rad);background:
+  var(--boll-bild) center 55%/28% no-repeat,
+  repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.06) 79px 80px),
+  linear-gradient(160deg,var(--bana),var(--djup) 70%);
+  border:1px solid var(--linje)}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ---------- Om oss ---------- */
+.omoss .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.omoss h2{font-size:clamp(3rem,7vw,5.4rem)}
+.omoss p{color:#d3def2;max-width:58ch;margin-bottom:18px}
+.omoss .foto{aspect-ratio:4/5}
+.värden{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.värden li{border-top:3px solid var(--boll);padding-top:12px}
+.värden strong{display:block;font-family:var(--display);font-size:1.6rem;text-transform:uppercase;line-height:1.05}
+.värden span{color:var(--dimma);font-size:.95rem}
+
+/* ---------- Lag ---------- */
+.lagrad{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.lag{background:var(--djup);border:1px solid var(--linje);border-radius:var(--rad);overflow:hidden;display:flex;flex-direction:column}
+.lag .foto{aspect-ratio:16/10;border:0;border-radius:0}
+.lag__text{padding:26px 28px 30px}
+.lag__div{display:inline-block;background:var(--boll);color:var(--natt);font-family:var(--display);font-weight:900;font-size:1.15rem;padding:2px 12px;border-radius:8px;margin-bottom:14px;text-transform:uppercase}
+.lag h3{font-size:2.4rem;margin-bottom:8px}
+.lag p{color:var(--dimma)}
+
+/* ---------- Matcher ---------- */
+.matcher{background:var(--kalk);color:var(--natt)}
+.matcher .ingress{color:#47587c}
+.ram{border-radius:var(--rad);overflow:hidden;background:#fff;border:1px solid rgba(6,26,58,.12);box-shadow:0 14px 40px rgba(6,26,58,.12)}
+.ram iframe{width:100%;height:720px;border:0;display:block}
+.ram__fot{padding:16px 22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;font-size:.95rem;color:#47587c;border-top:1px solid rgba(6,26,58,.1)}
+.matcher .knapp--ram{border-color:rgba(6,26,58,.25);color:var(--natt)}
+.matcher .knapp--ram:hover{border-color:var(--natt);background:var(--natt);color:var(--kalk)}
+
+/* ---------- Träning ---------- */
+.traning .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.traning .foto{aspect-ratio:4/5}
+.pass{list-style:none;margin-top:8px}
+.pass li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--linje)}
+.pass li:last-child{border-bottom:1px solid var(--linje)}
+.pass strong{font-family:var(--display);font-size:1.7rem;text-transform:uppercase;line-height:1.05;color:var(--boll)}
+.pass span{color:var(--dimma)}
+.pass em{display:block;font-style:normal;color:var(--kalk);font-weight:600}
+
+/* ---------- Bli medlem ---------- */
+.medlem-sek .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.medlem-sek h2{font-size:clamp(3rem,7vw,5.4rem)}
+.fordelar{list-style:none;margin-top:24px;display:grid;gap:12px}
+.fordelar li{display:flex;gap:12px;color:#d3def2}
+.fordelar li::before{content:"";flex:none;width:22px;height:22px;margin-top:3px;background:var(--boll-bild) center/contain no-repeat}
+form{background:var(--djup);border:1px solid var(--linje);border-radius:var(--rad);padding:32px;display:grid;gap:18px}
+.fält{display:grid;gap:7px}
+label{font-weight:600;font-size:.95rem}
+input,select,textarea{width:100%;font:inherit;color:var(--kalk);background:var(--natt);border:1px solid var(--linje);border-radius:12px;padding:13px 15px}
+input::placeholder,textarea::placeholder{color:#6f84ab}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--boll);outline-offset:1px;border-color:transparent}
+textarea{min-height:110px;resize:vertical}
+.två{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.liten{font-size:.88rem;color:var(--dimma)}
+
+/* ---------- Kontakt ---------- */
+.kontakt{background:var(--kalk);color:var(--natt)}
+.kontakt .ingress{color:#47587c}
+.kontaktrad{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.kontaktkort{background:#fff;border:1px solid rgba(6,26,58,.12);border-radius:var(--rad);padding:28px}
+.kontaktkort h3{font-size:1.5rem;margin-bottom:8px;color:var(--bana)}
+.kontaktkort a{font-weight:700;word-break:break-word}
+
+/* ---------- Fot ---------- */
+footer{padding:36px 0;border-top:1px solid var(--linje);color:var(--dimma);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* ---------- Mobil ---------- */
+@media (max-width:900px){
+  section{padding:72px 0}
+  .burgare{display:block}
+  .meny{position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--natt);padding:10px 20px 20px;border-bottom:1px solid var(--linje);display:none}
+  .meny.öppen{display:flex}
+  .meny a{padding:14px 10px;border-radius:10px}
+  .meny .medlem a{margin:10px 0 0;text-align:center}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero__boll{width:200px;justify-self:start;order:-1}
+  .hero__bana{right:-40%;opacity:.35}
+  .nasta{margin-top:-40px}
+  .nasta__kort{grid-template-columns:1fr;gap:12px;padding:24px}
+  .nasta__etikett{border:0;padding:0}
+  .omoss .wrap{grid-template-columns:1fr}
+  .omoss .foto{aspect-ratio:16/10;order:-1}
+  .värden{grid-template-columns:1fr}
+  .lagrad,.traning .wrap,.medlem-sek .wrap,.kontaktrad{grid-template-columns:1fr}
+  .traning .foto{aspect-ratio:16/10;order:-1}
+  .pass li{grid-template-columns:1fr;gap:4px}
+  .två{grid-template-columns:1fr}
+  .ram iframe{height:640px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero__boll{animation:none}
+  *{transition:none!important}
+}
 </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="wrap nav">
-    <a class="brand" href="#">
-      <img alt="Pamir VBK Logga" src="assets/logo.png" onerror="this.onerror=null;this.src='assets/pamir-logo.png';"/>
-      <span><strong>Pamir VBK</strong><small>Volleyboll i Sollentuna</small></span>
+<!-- MENY -->
+<header class="topp">
+  <div class="wrap">
+    <a class="logga" href="#top" aria-label="Pamir VBK, till toppen">
+      <img src="assets/logo.png" alt="Pamir VBK" onerror="this.src='assets/pamir-logo.png'">
+      <span><b>Pamir VBK</b><small>Volleyboll i Sollentuna</small></span>
     </a>
-    <nav>
-      <a href="#lag">Våra Lag</a>
-      <a href="#matcher">Matcher</a>
-      <a href="#traning">Träningar</a>
-      <a href="#bilder">Instagram</a>
-      <a href="#kontakt">Kontakt</a>
-      <a class="pill" href="#medlem">Bli medlem</a>
-    </nav>
+    <button class="burgare" id="burgare" aria-label="Öppna menyn" aria-expanded="false">☰</button>
+    <ul class="meny" id="meny">
+      <li><a href="#omoss">Om oss</a></li>
+      <li><a href="#lag">Våra lag</a></li>
+      <li><a href="#matcher">Matcher</a></li>
+      <li><a href="#traning">Träningar</a></li>
+      <li><a href="#bilder">Instagram</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li class="medlem"><a href="#medlem">Bli medlem</a></li>
+    </ul>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="hero-photo"></div>
-    <div class="wrap hero-grid">
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-label="Välkommen">
+  <div class="hero__bild"><img src="assets/hero-team.jpg" alt="Pamir VBK lagbild" onerror="this.remove()"></div>
+
+  <svg class="hero__bana" viewBox="0 0 1000 500" fill="none" stroke="#ffffff" stroke-width="5" aria-hidden="true">
+    <rect x="20" y="20" width="960" height="460" rx="6"/>
+    <line x1="500" y1="20" x2="500" y2="480" stroke-width="9"/>
+    <line x1="340" y1="20" x2="340" y2="480"/>
+    <line x1="660" y1="20" x2="660" y2="480"/>
+    <circle cx="500" cy="250" r="70" stroke-opacity=".4"/>
+  </svg>
+
+  <div class="wrap">
+    <div>
+      <h1><span>Volleyboll.</span><span>Gemenskap.</span><span>Pamir.</span></h1>
+      <p class="lead">Vi spelar herrvolleyboll i division 2 och division 3. Hos oss möts ambition, glädje och lagkänsla.</p>
+      <div class="hero__knappar">
+        <a class="knapp knapp--gul" href="#medlem">Bli medlem</a>
+        <a class="knapp knapp--ram" href="#matcher">Kommande matcher</a>
+      </div>
+    </div>
+    <svg class="hero__boll" viewBox="0 0 100 100" role="img" aria-label="Volleyboll">
+      <defs><clipPath id="hb"><circle cx="50" cy="50" r="48"/></clipPath></defs>
+      <g clip-path="url(#hb)">
+        <circle cx="50" cy="50" r="48" fill="#ffd23f"/>
+        <path d="M-5 35 Q50 10 105 35 M-5 68 Q50 95 105 68 M30 -5 Q60 50 30 105 M72 -5 Q42 50 72 105" fill="none" stroke="#1f5bc4" stroke-width="9"/>
+        <ellipse cx="36" cy="30" rx="16" ry="9" fill="#fff" opacity=".22" transform="rotate(-30 36 30)"/>
+      </g>
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#061a3a" stroke-width="2"/>
+    </svg>
+  </div>
+</section>
+
+<!-- NÄSTA MATCH -->
+<section class="nasta" aria-label="Nästa match">
+  <div class="wrap">
+    <div class="nasta__kort">
+      <div class="nasta__etikett">Nästa<br>match</div>
       <div>
-        <p class="kicker">Pamir Häggvik Volleybollklubb</p>
-        <h1 data-content="heroTitle">Volleyboll.<br/>Gemenskap.<br/>Pamir.</h1>
-        <p class="lead" data-content="heroLead">Vi spelar herrvolleyboll i division 2 och division 3. Hos oss möts ambition, glädje och lagkänsla.</p>
-        <div class="actions">
-          <a class="btn primary" href="#medlem">Bli medlem</a>
-          <a class="btn glass" href="#matcher">Kommande matcher</a>
+        <div class="nasta__lag">Pamir VBK – Säters IF VBK</div>
+        <div class="nasta__info">Silverdalshallen, Sollentuna</div>
+      </div>
+      <a class="knapp knapp--gul" href="#matcher">Hela spelschemat</a>
+    </div>
+  </div>
+</section>
+
+<!-- OM OSS -->
+<section class="omoss" id="omoss">
+  <div class="wrap">
+    <div>
+      <h2>Om oss</h2>
+      <p>Pamir Häggvik Volleybollklubb startades 2025 av ett kompisgäng i Sollentuna. I dag har föreningen drygt 25 aktiva medlemmar och två herrlag i seriespel.</p>
+      <p>Vi tränar och spelar våra hemmamatcher i Silverdalshallen. Hos oss står gemenskap, respekt, utveckling och glädje i centrum.</p>
+      <ul class="värden">
+        <li><strong>Ambition</strong><span>Vi vill bli bättre, match för match.</span></li>
+        <li><strong>Glädje</strong><span>Volleyboll ska vara roligt.</span></li>
+        <li><strong>Lagkänsla</strong><span>Vi vinner och förlorar tillsammans.</span></li>
+      </ul>
+    </div>
+    <div class="foto">
+      <img src="assets/laget.webp" alt="Pamir VBK" loading="lazy" onerror="this.remove()">
+    </div>
+  </div>
+</section>
+
+<!-- LAG -->
+<section id="lag">
+  <div class="wrap">
+    <h2>Våra lag</h2>
+    <p class="ingress">Säsongen 2026/27. Två herrlag som tränar och spelar tillsammans.</p>
+    <div class="lagrad">
+      <article class="lag">
+        <div class="foto"><img src="assets/laget.webp" alt="Pamir VBK i division 2" loading="lazy" onerror="this.remove()"></div>
+        <div class="lag__text">
+          <span class="lag__div">Div 2</span>
+          <h3>Pamir VBK A</h3>
+          <p>Division 2 Mellersta Östra Herrar.</p>
         </div>
-      </div>
-      <aside class="next-card">
-        <p class="kicker" style="color:#60a5fa">NÄSTA MATCH</p>
-        <span class="datebox"><b>--</b><small>---</small></span>
-        <div><h2>Kommande match</h2><p>Laddar matcher...</p></div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section soft" id="lag">
-    <div class="wrap">
-      <div class="heading"><div><p class="kicker">Säsongen 2026/27</p><h2>Våra lag</h2></div></div>
-      <div class="team-grid">
-        <article><div class="division">DIV 2</div><h3 data-content="team1Name">Pamir VBK</h3><p data-content="team1Text">Division 2 Mellersta Östra Herrar.</p></article>
-        <article><div class="division">DIV 3</div><h3 data-content="team2Name">Pamir VBK B</h3><p data-content="team2Text">Division 3 Östra, Nord Herrar.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section dark-section" id="matcher">
-    <div class="wrap">
-      <div class="heading"><div><p class="kicker" style="color:#60a5fa">Spelschema</p><h2>Kommande matcher</h2></div></div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px;">
-        <div class="match-column"><h3>Division 2</h3><div id="div2-matches-container"></div></div>
-        <div class="match-column"><h3>Division 3</h3><div id="div3-matches-container"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="bilder">
-    <div class="wrap">
-      <div class="heading"><div><p class="kicker">Följ oss</p><h2>Senaste från Instagram</h2></div></div>
-      <behold-widget feed-id="TLVoBJ7cNKkm3ujNi4bw"></behold-widget>
-      <script src="https://w.behold.so/widget.js" type="module"></script>
-    </div>
-  </section>
-
-  <section class="section contact" id="kontakt">
-    <div class="wrap contact-grid">
-      <div><p class="kicker">Kontakt</p><h2>Hör av dig till oss</h2><p>Frågor om träning, medlemskap eller matcher.</p></div>
-      <div style="background:#fff;padding:30px;border-radius:20px;border:1px solid var(--line);">
-        <p><strong>E-post:</strong> <a href="mailto:pamir.vbk@gmail.com" data-content="contactEmail">pamir.vbk@gmail.com</a></p>
-        <p><strong>Instagram:</strong> @pamir.vbk</p>
-        <p><strong>Hemmahall:</strong> Silverdalshallen</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ADMIN PANEL (Aktiveras via klick i sidfoten) -->
-  <section class="embedded-admin" id="admin" hidden>
-    <div class="wrap">
-      <div class="heading"><div><p class="kicker">Administratör</p><h2>Adminpanel</h2></div></div>
-      
-      <div id="inlineAdminLogin" class="admin-card" style="max-width:450px;margin:auto;">
-        <h3>Logga in för att redigera</h3>
-        <form id="inlineAdminLoginForm">
-          <label>E-post<input type="email" name="email" value="admin@pamirvbk.se" required/></label>
-          <label>Lösenord<input type="password" name="password" value="PamirAdmin2026" required/></label>
-          <button class="btn primary" type="submit">Logga in</button>
-          <p id="inlineAdminError" style="color:red;font-weight:700;"></p>
-        </form>
-      </div>
-
-      <div id="inlineAdminApp" hidden>
-        <div class="admin-card">
-          <h3>Ändra texter på hemsidan</h3>
-          <form id="inlineContentForm">
-            <label>Rubrik på startsidan<textarea name="heroTitle" rows="2"></textarea></label>
-            <label>Ingress<textarea name="heroLead" rows="2"></textarea></label>
-            <label>Division 2 Beskrivning<textarea name="team1Text" rows="2"></textarea></label>
-            <label>Division 3 Beskrivning<textarea name="team2Text" rows="2"></textarea></label>
-            <button class="btn primary" type="submit">Spara ändringar</button>
-            <p id="inlineContentMessage" style="color:green;font-weight:700;"></p>
-          </form>
+      </article>
+      <article class="lag">
+        <div class="foto"><img src="assets/samling.webp" alt="Pamir VBK B i division 3" loading="lazy" onerror="this.remove()"></div>
+        <div class="lag__text">
+          <span class="lag__div">Div 3</span>
+          <h3>Pamir VBK B</h3>
+          <p>Division 3 Östra, Nord Herrar.</p>
         </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MATCHER -->
+<section class="matcher" id="matcher">
+  <div class="wrap">
+    <h2>Kommande matcher</h2>
+    <p class="ingress">Spelschemat hämtas direkt från Profixio och uppdateras automatiskt.</p>
+    <div class="ram">
+      <iframe src="https://www.profixio.com/app/lx/clubs/30759?t=schedule" title="Spelschema från Profixio" loading="lazy"></iframe>
+      <div class="ram__fot">
+        <span>Syns inte schemat? Öppna det direkt hos Profixio.</span>
+        <a class="knapp knapp--ram" href="https://www.profixio.com/app/lx/clubs/30759?t=schedule" target="_blank" rel="noopener">Öppna spelschemat</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- TRÄNINGAR -->
+<section class="traning" id="traning">
+  <div class="wrap">
+    <div class="foto">
+      <img src="assets/block.webp" alt="Träning i Silverdalshallen" loading="lazy" onerror="this.remove()">
+    </div>
+    <div>
+      <h2>Träningar</h2>
+      <p class="ingress">Alla som vill spela är välkomna att provträna. Hör av dig först så berättar vi vad du ska ta med.</p>
+      <ul class="pass">
+        <li><strong>Torsdagar</strong><span><em>21:00–23:00</em>Silverdalshallen</span></li>
+        <li><strong>Lördagar</strong><span><em>18:00–20:00</em>Silverdalshallen</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM (BEHOLD WIDGET) -->
+<section class="galleri" id="bilder">
+  <div class="wrap">
+    <h2>Senaste från Instagram</h2>
+    <p class="ingress">Matchbilder, träningar och stämning från hallen. Följ @pamir.vbk för mer.</p>
+    
+    <behold-widget feed-id="TLVoBJ7cNKkm3ujNi4bw"></behold-widget>
+    <script src="https://w.behold.so/widget.js" type="module"></script>
+  </div>
+</section>
+
+<!-- BLI MEDLEM -->
+<section class="medlem-sek" id="medlem">
+  <div class="wrap">
+    <div>
+      <h2>Bli medlem</h2>
+      <p class="ingress">Fyll i formuläret så hör vi av oss med nästa steg.</p>
+      <ul class="fordelar">
+        <li>Träna och spela matcher i division 2 eller division 3</li>
+        <li>Ett lag som håller ihop, på och utanför planen</li>
+        <li>Provträna innan du bestämmer dig</li>
+      </ul>
+    </div>
+    <form name="medlem" method="POST" data-netlify="true" netlify-honeypot="bot-falt">
+      <input type="hidden" name="form-name" value="medlem">
+      <p hidden><label>Lämna tomt: <input name="bot-falt"></label></p>
+      <div class="två">
+        <div class="fält"><label for="namn">Namn</label><input id="namn" name="namn" required autocomplete="name"></div>
+        <div class="fält"><label for="pnr">Personnummer</label><input id="pnr" name="personnummer" required inputmode="numeric" pattern="[0-9]{6,8}[\-+]?[0-9]{4}" placeholder="ÅÅÅÅMMDD-XXXX" autocomplete="off" title="Skriv personnummer som ÅÅÅÅMMDD-XXXX"></div>
+      </div>
+      <div class="fält"><label for="adr">Adress</label><input id="adr" name="adress" required autocomplete="street-address" placeholder="Gatuadress"></div>
+      <div class="två">
+        <div class="fält"><label for="pn">Postnummer</label><input id="pn" name="postnummer" required inputmode="numeric" pattern="[0-9]{3} ?[0-9]{2}" autocomplete="postal-code" title="Fem siffror, t.ex. 191 40"></div>
+        <div class="fält"><label for="ort">Ort</label><input id="ort" name="ort" required autocomplete="address-level2"></div>
+      </div>
+      <div class="två">
+        <div class="fält"><label for="epost">E-post</label><input id="epost" name="epost" type="email" required autocomplete="email"></div>
+        <div class="fält"><label for="tel">Telefon</label><input id="tel" name="telefon" type="tel" required autocomplete="tel"></div>
+      </div>
+      <div class="fält"><label for="niva">Jag är intresserad av</label>
+        <select id="niva" name="intresse" required>
+          <option>Division 2</option>
+          <option>Division 3</option>
+          <option>Provträning</option>
+          <option>Stödmedlem</option>
+        </select>
+      </div>
+      <div class="fält"><label for="medd">Berätta kort om dig</label><textarea id="medd" name="meddelande" required placeholder="Tidigare erfarenhet av volleyboll, frågor, annat"></textarea></div>
+      <button class="knapp knapp--gul" type="submit">Skicka intresseanmälan</button>
+      <p class="liten">Alla fält måste fyllas i. Vi använder dina uppgifter bara för medlemskapet i klubben.</p>
+    </form>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <h2>Hör av dig till oss</h2>
+    <p class="ingress">Frågor om träning, medlemskap eller matcher.</p>
+    <div class="kontaktrad">
+      <div class="kontaktkort"><h3>E-post</h3><a href="mailto:pamir.vbk@gmail.com">pamir.vbk@gmail.com</a></div>
+      <div class="kontaktkort"><h3>Instagram</h3><a href="https://www.instagram.com/pamir.vbk/" target="_blank" rel="noopener">@pamir.vbk</a></div>
+      <div class="kontaktkort"><h3>Hemmahall</h3><a href="https://www.google.com/maps/search/?api=1&query=Silverdalshallen+Sollentuna" target="_blank" rel="noopener">Silverdalshallen, Sollentuna</a></div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
-  <div class="wrap footer-grid">
-    <p>© Pamir Häggvik Volleybollklubb</p>
-    <button id="footerAdminButton" style="background:none;border:none;color:#aeb7c5;cursor:pointer;font-weight:700;">🔒 Admin</button>
+  <div class="wrap">
+    <span>© Pamir Häggvik Volleybollklubb</span>
+    <span>Volleyboll i Sollentuna</span>
   </div>
 </footer>
 
 <script>
-// Admin & Matchhantering
-(function(){
-  const defaults = {
-    heroTitle: 'Volleyboll.\nGemenskap.\nPamir.',
-    heroLead: 'Vi spelar herrvolleyboll i division 2 och division 3. Hos oss möts ambition, glädje och lagkänsla.',
-    team1Text: 'Division 2 Mellersta Östra Herrar.',
-    team2Text: 'Division 3 Östra, Nord Herrar.',
-    contactEmail: 'pamir.vbk@gmail.com'
-  };
-
-  const saved = JSON.parse(localStorage.getItem('pamirSiteSettings') || '{}');
-  const data = {...defaults, ...saved};
-
-  document.querySelectorAll('[data-content]').forEach(el => {
-    const k = el.dataset.content;
-    if(data[k]) el.innerHTML = data[k].replace(/\n/g, '<br>');
+  var knapp = document.getElementById('burgare');
+  var meny = document.getElementById('meny');
+  knapp.addEventListener('click', function () {
+    var öppen = meny.classList.toggle('öppen');
+    knapp.setAttribute('aria-expanded', öppen);
   });
-
-  // Admin Inloggning
-  const btn = document.getElementById('footerAdminButton');
-  const adminSec = document.getElementById('admin');
-  btn?.addEventListener('click', () => {
-    adminSec.hidden = !adminSec.hidden;
-    if(!adminSec.hidden) adminSec.scrollIntoView({behavior:'smooth'});
+  meny.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { meny.classList.remove('öppen'); knapp.setAttribute('aria-expanded', false); }
   });
-
-  const loginForm = document.getElementById('inlineAdminLoginForm');
-  loginForm?.addEventListener('submit', e => {
-    e.preventDefault();
-    const f = new FormData(loginForm);
-    if(f.get('email') === 'admin@pamirvbk.se' && f.get('password') === 'PamirAdmin2026') {
-      document.getElementById('inlineAdminLogin').hidden = true;
-      document.getElementById('inlineAdminApp').hidden = false;
-      const cForm = document.getElementById('inlineContentForm');
-      Object.keys(data).forEach(k => { if(cForm.elements[k]) cForm.elements[k].value = data[k]; });
-    } else {
-      document.getElementById('inlineAdminError').textContent = 'Fel e-post eller lösenord.';
-    }
-  });
-
-  document.getElementById('inlineContentForm')?.addEventListener('submit', e => {
-    e.preventDefault();
-    const updated = Object.fromEntries(new FormData(e.currentTarget));
-    localStorage.setItem('pamirSiteSettings', JSON.stringify({...data, ...updated}));
-    document.getElementById('inlineContentMessage').textContent = 'Sparat! Sidan uppdateras...';
-    setTimeout(() => location.reload(), 600);
-  });
-})();
 </script>
 </body>
 </html>
