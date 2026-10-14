@@ -10,6 +10,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<!--
+  SÅ ÄNDRAR NI I SIDAN
+  - Texter, träningstider, matcher, resultat och tabeller ändrar ni i admin.html.
+    Där trycker ni på Spara, får en fil som heter innehall.js och lägger den i mappen.
+  - Bilder byter ni ut i mappen assets (samma filnamn).
+  - Den här filen (index.html) behöver ni normalt inte ändra.
+-->
+
 <style>
 :root{
   --natt:#061a3a;
@@ -25,6 +33,7 @@
   --boll-bild:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Ccircle cx='50' cy='50' r='48'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23c)'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23ffd23f'/%3E%3Cpath d='M-5 35 Q50 10 105 35 M-5 68 Q50 95 105 68 M30 -5 Q60 50 30 105 M72 -5 Q42 50 72 105' fill='none' stroke='%231f5bc4' stroke-width='9'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='48' fill='none' stroke='%23061a3a' stroke-width='2.5'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{background:var(--natt);color:var(--kalk);font-family:var(--text);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
@@ -36,12 +45,14 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spaci
 h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .ingress{color:var(--dimma);max-width:56ch;margin-bottom:44px}
 
+/* Knappar */
 .knapp{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .15s,background .15s,color .15s;cursor:pointer;font-family:var(--text);font-size:1rem}
 .knapp--gul{background:var(--boll);color:var(--natt)}
 .knapp--gul:hover{transform:translateY(-2px);background:#ffe07a}
 .knapp--ram{border-color:var(--linje);color:var(--kalk)}
 .knapp--ram:hover{border-color:var(--boll);color:var(--boll)}
 
+/* Meny */
 .topp{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,26,58,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linje)}
 .topp .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logga{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -55,6 +66,7 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .meny .medlem a:hover{background:#ffe07a}
 .burgare{display:none;background:none;border:1px solid var(--linje);color:var(--kalk);width:46px;height:46px;border-radius:12px;cursor:pointer;font-size:1.3rem}
 
+/* Hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden;background:radial-gradient(ellipse at 75% 40%,var(--bana) 0%,var(--djup) 45%,var(--natt) 80%)}
 .hero__bild{position:absolute;inset:0;z-index:0}
 .hero__bild img{width:100%;height:100%;object-fit:cover;opacity:.35;mix-blend-mode:luminosity}
@@ -69,12 +81,14 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .hero__boll{width:min(360px,70%);justify-self:center;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:rulla 1.4s cubic-bezier(.2,.8,.2,1) both}
 @keyframes rulla{from{transform:translateX(120px) rotate(-300deg);opacity:0}to{transform:none;opacity:1}}
 
+/* Nästa match */
 .nasta{margin-top:-60px;position:relative;z-index:5;padding:0}
 .nasta__kort{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--kalk);color:var(--natt);border-radius:var(--rad);padding:26px 32px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .nasta__etikett{font-family:var(--display);font-weight:800;font-size:1.5rem;text-transform:uppercase;line-height:1;padding-right:28px;border-right:2px solid rgba(6,26,58,.15)}
 .nasta__lag{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.6rem);text-transform:uppercase;line-height:1}
 .nasta__info{color:#3a4d73;font-size:.98rem;margin-top:6px}
 
+/* Bildplatser */
 .foto{position:relative;overflow:hidden;border-radius:var(--rad);background:
   var(--boll-bild) center 55%/28% no-repeat,
   repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.06) 79px 80px),
@@ -82,19 +96,7 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
   border:1px solid var(--linje)}
 .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-/* Resultat & Tabell Styling */
-.resultat-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
-.resultat-kort{background:var(--djup);border:1px solid var(--linje);border-radius:var(--rad);padding:24px}
-.resultat-rad{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--linje)}
-.resultat-rad:last-child{border-bottom:0}
-.resultat-poang{background:var(--boll);color:var(--natt);font-weight:800;padding:4px 12px;border-radius:8px;font-family:var(--display);font-size:1.2rem}
-
-.tabell-ram{background:#fff;color:var(--natt);border-radius:var(--rad);overflow:hidden;box-shadow:0 14px 40px rgba(6,26,58,.12);margin-top:20px}
-.serietabell{width:100%;border-collapse:collapse;text-align:left}
-.serietabell th,.serietabell td{padding:14px 18px;border-bottom:1px solid rgba(6,26,58,.1)}
-.serietabell th{background:var(--djup);color:var(--kalk);font-family:var(--display);font-size:1.1rem;letter-spacing:.05em}
-.serietabell tr.pamir-rad{background:#edf4ff;font-weight:700}
-
+/* Om oss */
 .omoss .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
 .omoss h2{font-size:clamp(3rem,7vw,5.4rem)}
 .omoss p{color:#d3def2;max-width:58ch;margin-bottom:18px}
@@ -104,6 +106,7 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .värden strong{display:block;font-family:var(--display);font-size:1.6rem;text-transform:uppercase;line-height:1.05}
 .värden span{color:var(--dimma);font-size:.95rem}
 
+/* Lag */
 .lagrad{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .lag{background:var(--djup);border:1px solid var(--linje);border-radius:var(--rad);overflow:hidden;display:flex;flex-direction:column}
 .lag .foto{aspect-ratio:16/10;border:0;border-radius:0}
@@ -112,14 +115,47 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .lag h3{font-size:2.4rem;margin-bottom:8px}
 .lag p{color:var(--dimma)}
 
+/* Matcher, resultat, tabell */
 .matcher{background:var(--kalk);color:var(--natt)}
 .matcher .ingress{color:#47587c}
-.ram{border-radius:var(--rad);overflow:hidden;background:#fff;border:1px solid rgba(6,26,58,.12);box-shadow:0 14px 40px rgba(6,26,58,.12)}
-.ram iframe{width:100%;height:720px;border:0;display:block}
-.ram__fot{padding:16px 22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;font-size:.95rem;color:#47587c;border-top:1px solid rgba(6,26,58,.1)}
+.flikar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.flik{font:inherit;font-weight:700;padding:10px 22px;border-radius:999px;border:2px solid rgba(6,26,58,.2);background:transparent;color:var(--natt);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.flik:hover{border-color:var(--natt)}
+.flik.aktiv{background:var(--natt);color:var(--boll);border-color:var(--natt)}
+.flikar--liten .flik{padding:7px 18px;font-size:.95rem}
+.dagrubrik{font-family:var(--display);font-weight:800;font-size:1.7rem;text-transform:uppercase;line-height:1.05;margin:28px 0 12px}
+.grupp:first-child .dagrubrik{margin-top:4px}
+.matchlista{list-style:none;display:grid;gap:12px}
+.matchlista li{display:grid;grid-template-columns:120px 1fr 240px auto;gap:20px;align-items:center;background:#fff;border:1px solid rgba(6,26,58,.12);border-radius:var(--rad);padding:18px 26px;box-shadow:0 8px 24px rgba(6,26,58,.07)}
+.match__tid strong{display:block;font-family:var(--display);font-size:1.5rem;text-transform:uppercase;line-height:1.05}
+.match__tid span{color:#47587c;font-size:.92rem}
+.match__lag{font-family:var(--display);font-weight:800;font-size:1.7rem;text-transform:uppercase;line-height:1.1}
+.match__lag .vi{color:var(--bana);font-weight:900}
+.match__plats{color:#47587c;font-size:.98rem}
+.match__div{background:var(--natt);color:var(--boll);font-family:var(--display);font-weight:900;padding:2px 14px;border-radius:8px;text-transform:uppercase;font-size:1.1rem;justify-self:end}
+.resultat{display:inline-block;background:var(--natt);color:var(--kalk);font-family:var(--display);font-weight:800;font-size:1.5rem;padding:0 12px;margin:0 8px;border-radius:8px;vertical-align:middle;letter-spacing:.04em}
+.sets{display:block;font-family:var(--text);font-weight:500;font-size:.88rem;color:#47587c;text-transform:none;margin-top:6px}
+.tomt{background:#fff;border:1px dashed rgba(6,26,58,.25);border-radius:var(--rad);padding:26px;color:#47587c}
+.visamer{margin-top:22px}
+.tabellkort{background:#fff;border:1px solid rgba(6,26,58,.12);border-radius:var(--rad);padding:26px 28px;margin-bottom:28px;box-shadow:0 8px 24px rgba(6,26,58,.07)}
+.tabellkort h3{font-size:1.9rem;margin-bottom:14px}
+.tabellyta{overflow-x:auto}
+.tabell{width:100%;border-collapse:collapse;min-width:460px}
+.tabell th{font-family:var(--display);font-size:1.05rem;text-transform:uppercase;text-align:right;padding:8px 14px;color:#47587c;border-bottom:2px solid rgba(6,26,58,.15)}
+.tabell td{text-align:right;padding:12px 14px;border-bottom:1px solid rgba(6,26,58,.1);font-variant-numeric:tabular-nums}
+.tabell th:nth-child(1),.tabell td:nth-child(1){text-align:left;width:46px}
+.tabell th:nth-child(2),.tabell td:nth-child(2){text-align:left}
+.tabell tr.vi td{background:var(--boll);font-weight:800;color:var(--natt);border-bottom-color:rgba(6,26,58,.2)}
+.tabell tr.vi td:first-child{border-radius:10px 0 0 10px}
+.tabell tr.vi td:last-child{border-radius:0 10px 10px 0}
+.tabellnot{margin-top:14px;font-size:.88rem;color:#47587c}
+.profixio{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--natt);color:var(--kalk);border-radius:var(--rad);padding:28px 32px;margin-top:36px}
+.profixio h3{font-size:1.8rem;margin-bottom:4px}
+.profixio p{color:var(--dimma)}
 .matcher .knapp--ram{border-color:rgba(6,26,58,.25);color:var(--natt)}
 .matcher .knapp--ram:hover{border-color:var(--natt);background:var(--natt);color:var(--kalk)}
 
+/* Träning */
 .traning .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .traning .foto{aspect-ratio:4/5}
 .pass{list-style:none;margin-top:8px}
@@ -129,6 +165,7 @@ h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:14px}
 .pass span{color:var(--dimma)}
 .pass em{display:block;font-style:normal;color:var(--kalk);font-weight:600}
 
+/* Bli medlem */
 .medlem-sek .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
 .medlem-sek h2{font-size:clamp(3rem,7vw,5.4rem)}
 .fordelar{list-style:none;margin-top:24px;display:grid;gap:12px}
@@ -144,6 +181,7 @@ textarea{min-height:110px;resize:vertical}
 .två{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .liten{font-size:.88rem;color:var(--dimma)}
 
+/* Kontakt */
 .kontakt{background:var(--kalk);color:var(--natt)}
 .kontakt .ingress{color:#47587c}
 .kontaktrad{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -161,7 +199,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .meny.öppen{display:flex}
   .meny a{padding:14px 10px;border-radius:10px}
   .meny .medlem a{margin:10px 0 0;text-align:center}
-  .hero .wrap,.resultat-grid{grid-template-columns:1fr}
+  .hero .wrap{grid-template-columns:1fr}
   .hero__boll{width:200px;justify-self:start;order:-1}
   .hero__bana{right:-40%;opacity:.35}
   .nasta{margin-top:-40px}
@@ -173,8 +211,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .lagrad,.traning .wrap,.medlem-sek .wrap,.kontaktrad{grid-template-columns:1fr}
   .traning .foto{aspect-ratio:16/10;order:-1}
   .pass li{grid-template-columns:1fr;gap:4px}
+  .matchlista li{grid-template-columns:1fr;gap:6px;padding:18px 20px}
+  .match__div{justify-self:start}
+  .resultat{margin:0 6px}
+  .tabellkort{padding:20px 14px}
   .två{grid-template-columns:1fr}
-  .ram iframe{height:640px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero__boll{animation:none}
+  *{transition:none!important}
 }
 </style>
 </head>
@@ -184,14 +230,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 <header class="topp">
   <div class="wrap">
     <a class="logga" href="#top" aria-label="Pamir VBK, till toppen">
-      <img src="assets/logo.png" alt="Pamir VBK" onerror="this.src='assets/pamir-logo.png';">
+      <img src="assets/logo.png" alt="" onerror="this.style.display='none'">
       <span><b>Pamir VBK</b><small>Volleyboll i Sollentuna</small></span>
     </a>
     <button class="burgare" id="burgare" aria-label="Öppna menyn" aria-expanded="false">☰</button>
     <ul class="meny" id="meny">
       <li><a href="#omoss">Om oss</a></li>
       <li><a href="#lag">Våra lag</a></li>
-      <li><a href="#resultat">Resultat & Tabell</a></li>
       <li><a href="#matcher">Matcher</a></li>
       <li><a href="#traning">Träningar</a></li>
       <li><a href="#bilder">Instagram</a></li>
@@ -205,7 +250,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 
 <!-- HERO -->
 <section class="hero" aria-label="Välkommen">
-  <div class="hero__bild"><img src="assets/hero-team.jpg" alt="Pamir VBK lagbild" onerror="this.remove()"></div>
+  <div class="hero__bild"><img src="assets/hero-team.jpg" alt="" onerror="this.remove()"></div>
 
   <svg class="hero__bana" viewBox="0 0 1000 500" fill="none" stroke="#ffffff" stroke-width="5" aria-hidden="true">
     <rect x="20" y="20" width="960" height="460" rx="6"/>
@@ -218,7 +263,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   <div class="wrap">
     <div>
       <h1><span>Volleyboll.</span><span>Gemenskap.</span><span>Pamir.</span></h1>
-      <p class="lead">Vi spelar herrvolleyboll i division 2 och division 3. Hos oss möts ambition, glädje och lagkänsla.</p>
+      <p class="lead" data-text="hero.text">Vi spelar herrvolleyboll i division 2 och division 3. Hos oss möts ambition, glädje och lagkänsla.</p>
       <div class="hero__knappar">
         <a class="knapp knapp--gul" href="#medlem">Bli medlem</a>
         <a class="knapp knapp--ram" href="#matcher">Kommande matcher</a>
@@ -236,56 +281,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- NÄSTA MATCH -->
+<!-- NÄSTA MATCH (väljs automatiskt) -->
 <section class="nasta" aria-label="Nästa match">
   <div class="wrap">
     <div class="nasta__kort">
       <div class="nasta__etikett">Nästa<br>match</div>
       <div>
-        <div class="nasta__lag" id="nextMatchTitle">Laddar nästa match...</div>
+        <div class="nasta__lag" id="nextMatchTitle">Pamir VBK</div>
         <div class="nasta__info" id="nextMatchInfo">Silverdalshallen, Sollentuna</div>
       </div>
       <a class="knapp knapp--gul" href="#matcher">Hela spelschemat</a>
-    </div>
-  </div>
-</section>
-
-<!-- SENASTE RESULTAT OCH TABELL -->
-<section id="resultat">
-  <div class="wrap">
-    <h2>Senaste Resultat</h2>
-    <p class="ingress">Resultat från de senast spelade matcherna i Division 2 och Division 3.</p>
-    
-    <div class="resultat-grid">
-      <div class="resultat-kort">
-        <h3 style="margin-bottom:15px; color:var(--boll);">Division 2</h3>
-        <div id="div2-results-list">
-          <div class="resultat-rad"><span>Pamir VBK 3 - 1 Säters IF VBK</span><span class="resultat-poang">3 - 1</span></div>
-          <div class="resultat-rad"><span>Södermalms VBK 0 - 3 Pamir VBK</span><span class="resultat-poang">0 - 3</span></div>
-        </div>
-      </div>
-      <div class="resultat-kort">
-        <h3 style="margin-bottom:15px; color:var(--boll);">Division 3</h3>
-        <div id="div3-results-list">
-          <div class="resultat-rad"><span>Hästhagen IF D 1 - 3 Pamir VBK B</span><span class="resultat-poang">1 - 3</span></div>
-        </div>
-      </div>
-    </div>
-
-    <h2 style="margin-top:50px;">Serietabell</h2>
-    <p class="ingress">Aktuell tabellställning för säsongen 2026/27.</p>
-    
-    <div class="tabell-ram">
-      <table class="serietabell">
-        <thead>
-          <tr><th>#</th><th>Lag</th><th>S</th><th>V</th><th>F</th><th>P</th></tr>
-        </thead>
-        <tbody>
-          <tr class="pamir-rad"><td>1</td><td>Pamir VBK A (Div 2)</td><td>2</td><td>2</td><td>0</td><td>6</td></tr>
-          <tr><td>2</td><td>Södermalms VBK D</td><td>2</td><td>1</td><td>1</td><td>3</td></tr>
-          <tr><td>3</td><td>Säters IF VBK</td><td>2</td><td>0</td><td>2</td><td>0</td></tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </section>
@@ -295,8 +300,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   <div class="wrap">
     <div>
       <h2>Om oss</h2>
-      <p>Pamir Häggvik Volleybollklubb startades 2025 av ett kompisgäng i Sollentuna. I dag har föreningen drygt 25 aktiva medlemmar och två herrlag i seriespel.</p>
-      <p>Vi tränar och spelar våra hemmamatcher i Silverdalshallen. Hos oss står gemenskap, respekt, utveckling och glädje i centrum.</p>
+      <p data-text="omoss.stycke1">Pamir Häggvik Volleybollklubb startades 2025 av ett kompisgäng i Sollentuna. I dag har föreningen drygt 25 aktiva medlemmar och två herrlag i seriespel.</p>
+      <p data-text="omoss.stycke2">Vi tränar och spelar våra hemmamatcher i Silverdalshallen. Hos oss står gemenskap, respekt, utveckling och glädje i centrum.</p>
       <ul class="värden">
         <li><strong>Ambition</strong><span>Vi vill bli bättre, match för match.</span></li>
         <li><strong>Glädje</strong><span>Volleyboll ska vara roligt.</span></li>
@@ -319,8 +324,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
         <div class="foto"><img src="assets/laget.webp" alt="Pamir VBK i division 2" loading="lazy" onerror="this.remove()"></div>
         <div class="lag__text">
           <span class="lag__div">Div 2</span>
-          <h3>Pamir VBK A</h3>
-          <p>Division 2 Mellersta Östra Herrar.</p>
+          <h3>Pamir VBK</h3>
+          <p data-text="lag.div2">Division 2 Mellersta Östra Herrar.</p>
         </div>
       </article>
       <article class="lag">
@@ -328,24 +333,42 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
         <div class="lag__text">
           <span class="lag__div">Div 3</span>
           <h3>Pamir VBK B</h3>
-          <p>Division 3 Östra, Nord Herrar.</p>
+          <p data-text="lag.div3">Division 3 Östra, Nord Herrar.</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- MATCHER (PROFIXIO) -->
+<!-- MATCHER, RESULTAT, TABELL -->
 <section class="matcher" id="matcher">
   <div class="wrap">
-    <h2>Kommande matcher</h2>
-    <p class="ingress">Spelschemat hämtas direkt från Profixio och uppdateras automatiskt.</p>
-    <div class="ram">
-      <iframe src="https://www.profixio.com/app/lx/clubs/30759?t=schedule" title="Spelschema från Profixio" loading="lazy"></iframe>
-      <div class="ram__fot">
-        <span>Syns inte schemat? Öppna det direkt hos Profixio.</span>
-        <a class="knapp knapp--ram" href="https://www.profixio.com/app/lx/clubs/30759?t=schedule" target="_blank" rel="noopener">Öppna spelschemat</a>
+    <h2>Matcher och tabell</h2>
+    <p class="ingress">Våra kommande matcher, resultat och tabellplacering för säsongen 2026/27.</p>
+
+    <div class="flikar" role="tablist" aria-label="Matcher och tabell">
+      <button class="flik aktiv" role="tab" aria-selected="true" data-grupp="huvud" data-flik="p-kommande">Kommande</button>
+      <button class="flik" role="tab" aria-selected="false" data-grupp="huvud" data-flik="p-spelade">Spelade</button>
+      <button class="flik" role="tab" aria-selected="false" data-grupp="huvud" data-flik="p-tabell">Tabell</button>
+    </div>
+
+    <div id="p-kommande"></div>
+    <div id="p-spelade" hidden></div>
+    <div id="p-tabell" hidden>
+      <div class="flikar flikar--liten" role="tablist" aria-label="Välj serie">
+        <button class="flik aktiv" role="tab" aria-selected="true" data-grupp="serie" data-flik="t-div2">Division 2</button>
+        <button class="flik" role="tab" aria-selected="false" data-grupp="serie" data-flik="t-div3">Division 3</button>
       </div>
+      <div id="t-div2"></div>
+      <div id="t-div3" hidden></div>
+    </div>
+
+    <div class="profixio">
+      <div>
+        <h3>Hela spelschemat hos Profixio</h3>
+        <p>Alla matcher, resultat och tabeller direkt från förbundet.</p>
+      </div>
+      <a class="knapp knapp--gul" href="https://www.profixio.com/app/lx/clubs/30759?t=schedule" target="_blank" rel="noopener">Öppna spelschemat</a>
     </div>
   </div>
 </section>
@@ -354,25 +377,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 <section class="traning" id="traning">
   <div class="wrap">
     <div class="foto">
-      <img src="assets/block.webp" alt="Träning i Silverdalshallen" loading="lazy" onerror="this.remove()">
+      <img src="assets/block.webp" alt="Träning" loading="lazy" onerror="this.remove()">
     </div>
     <div>
       <h2>Träningar</h2>
-      <p class="ingress">Alla som vill spela är välkomna att provträna. Hör av dig först så berättar vi vad du ska ta med.</p>
-      <ul class="pass">
-        <li><strong>Torsdagar</strong><span><em>21:00–23:00</em>Silverdalshallen</span></li>
-        <li><strong>Lördagar</strong><span><em>18:00–20:00</em>Silverdalshallen</span></li>
+      <p class="ingress" data-text="traning.ingress">Alla som vill spela är välkomna att provträna. Hör av dig först så berättar vi vad du ska ta med.</p>
+      <ul class="pass" id="passlista">
+        <li><strong>Torsdagar</strong><span><em>21:00–22:30</em>Helenalundshallen</span></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- INSTAGRAM (BEHOLD WIDGET) -->
+<!-- INSTAGRAM -->
 <section class="galleri" id="bilder">
   <div class="wrap">
     <h2>Senaste från Instagram</h2>
     <p class="ingress">Matchbilder, träningar och stämning från hallen. Följ @pamir.vbk för mer.</p>
-    
     <behold-widget feed-id="TLVoBJ7cNKkm3ujNi4bw"></behold-widget>
     <script src="https://w.behold.so/widget.js" type="module"></script>
   </div>
@@ -427,9 +448,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
     <h2>Hör av dig till oss</h2>
     <p class="ingress">Frågor om träning, medlemskap eller matcher.</p>
     <div class="kontaktrad">
-      <div class="kontaktkort"><h3>E-post</h3><a href="mailto:pamir.vbk@gmail.com">pamir.vbk@gmail.com</a></div>
-      <div class="kontaktkort"><h3>Instagram</h3><a href="https://www.instagram.com/pamir.vbk/" target="_blank" rel="noopener">@pamir.vbk</a></div>
-      <div class="kontaktkort"><h3>Hemmahall</h3><a href="https://www.google.com/maps/search/?api=1&query=Silverdalshallen+Sollentuna" target="_blank" rel="noopener">Silverdalshallen, Sollentuna</a></div>
+      <div class="kontaktkort"><h3>E-post</h3><a id="k-epost" href="mailto:pamir.vbk@gmail.com">pamir.vbk@gmail.com</a></div>
+      <div class="kontaktkort"><h3>Instagram</h3><a id="k-insta" href="https://www.instagram.com/pamir.vbk/" target="_blank" rel="noopener">@pamir.vbk</a></div>
+      <div class="kontaktkort"><h3>Hemmahall</h3><a id="k-hall" href="https://www.google.com/maps/search/?api=1&query=Silverdalshallen+Sollentuna" target="_blank" rel="noopener">Silverdalshallen</a></div>
     </div>
   </div>
 </section>
@@ -443,39 +464,272 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   </div>
 </footer>
 
+<!-- Innehållet (matcher, texter m.m.) ligger i innehall.js och ändras i admin.html -->
+<!-- Reservkopia av innehållet. Används bara om innehall.js saknas i mappen. -->
 <script>
-  // Mobilmeny
+// Innehåll för pamirvbk.se. Den här filen skapas av admin.html – ändra helst inte för hand.
+window.PAMIR = {
+  "hero": {
+    "text": "Vi spelar herrvolleyboll i division 2 och division 3. Hos oss möts ambition, glädje och lagkänsla."
+  },
+  "omoss": {
+    "stycke1": "Pamir Häggvik Volleybollklubb startades 2025 av ett kompisgäng i Sollentuna. I dag har föreningen drygt 25 aktiva medlemmar och två herrlag i seriespel.",
+    "stycke2": "Vi tränar och spelar våra hemmamatcher i Silverdalshallen. Hos oss står gemenskap, respekt, utveckling och glädje i centrum."
+  },
+  "lag": {
+    "div2": "Division 2 Mellersta Östra Herrar.",
+    "div3": "Division 3 Östra, Nord Herrar."
+  },
+  "traning": {
+    "ingress": "Alla som vill spela är välkomna att provträna. Hör av dig först så berättar vi vad du ska ta med.",
+    "pass": [
+      { "dag": "Torsdagar", "tid": "21:00–22:30", "plats": "Helenalundshallen" }
+    ]
+  },
+  "kontakt": {
+    "epost": "pamir.vbk@gmail.com",
+    "instagram": "@pamir.vbk",
+    "hall": "Silverdalshallen"
+  },
+  "matcher": [
+    { "datum": "2026-11-07", "tid": "12:00", "hemma": "Pamir VBK", "borta": "Uppsala VBS D", "hall": "Silverdalshallen, Sollentuna", "div": "2", "omgang": "10" },
+    { "datum": "2026-11-07", "tid": "17:00", "hemma": "Pamir VBK", "borta": "Falu VK", "hall": "Silverdalshallen, Sollentuna", "div": "2", "omgang": "10" },
+    { "datum": "2026-11-14", "tid": "14:30", "hemma": "Pamir VBK", "borta": "Säters IF VBK B", "hall": "Solnahallen", "div": "2", "omgang": "13" },
+    { "datum": "2026-11-14", "tid": "17:00", "hemma": "Solna VBK B", "borta": "Pamir VBK", "hall": "Solnahallen", "div": "2", "omgang": "13" },
+    { "datum": "2026-11-28", "tid": "12:00", "hemma": "Pamir VBK B", "borta": "Uppsala VBS E", "hall": "Silverdalshallen, Sollentuna", "div": "3", "omgang": "5" },
+    { "datum": "2026-12-05", "tid": "12:00", "hemma": "Pamir VBK", "borta": "KTH VBF", "hall": "Silverdalshallen, Sollentuna", "div": "2", "omgang": "18" },
+    { "datum": "2026-12-05", "tid": "17:00", "hemma": "Pamir VBK", "borta": "Hästhagen IF C", "hall": "Silverdalshallen, Sollentuna", "div": "2", "omgang": "18" },
+    { "datum": "2026-12-06", "tid": "12:00", "hemma": "Sollentuna VK D", "borta": "Pamir VBK B", "hall": "Arena Satelliten, Sollentuna", "div": "3", "omgang": "10" },
+    { "datum": "2026-12-13", "tid": "09:45", "hemma": "KTH VBF", "borta": "Pamir VBK", "hall": "Forsgrenska, Södermalm", "div": "2", "omgang": "5" },
+    { "datum": "2026-12-13", "tid": "12:00", "hemma": "Pamir VBK", "borta": "Västerås VBK", "hall": "Forsgrenska, Södermalm", "div": "2", "omgang": "5" },
+    { "datum": "2026-12-19", "tid": "14:30", "hemma": "Pamir VBK", "borta": "Västerås VBK", "hall": "Arena Satelliten, Sollentuna", "div": "2", "omgang": "22" },
+    { "datum": "2026-12-19", "tid": "17:00", "hemma": "Sollentuna VK Draget", "borta": "Pamir VBK", "hall": "Arena Satelliten, Sollentuna", "div": "2", "omgang": "22" },
+    { "datum": "2027-01-17", "tid": "10:15", "hemma": "Hästhagen IF D", "borta": "Pamir VBK B", "hall": "Campushallarna, Nacka strand", "div": "3", "omgang": "13" },
+    { "datum": "2027-01-17", "tid": "12:30", "hemma": "Södermalms VBK G", "borta": "Pamir VBK B", "hall": "Campushallarna, Nacka strand", "div": "3", "omgang": "13" },
+    { "datum": "2027-01-30", "tid": "12:00", "hemma": "Pamir VBK B", "borta": "Täby Volley", "hall": "Silverdalshallen, Sollentuna", "div": "3", "omgang": "19" },
+    { "datum": "2027-01-30", "tid": "17:00", "hemma": "Pamir VBK B", "borta": "Östersund Volley", "hall": "Silverdalshallen, Sollentuna", "div": "3", "omgang": "19" },
+    { "datum": "2027-01-31", "tid": "08:00", "hemma": "Pamir VBK B", "borta": "Uppsala VBS E", "hall": "Silverdalshallen, Sollentuna", "div": "3", "omgang": "18" },
+    { "datum": "2027-02-06", "tid": "09:45", "hemma": "Södermalms VBK D", "borta": "Pamir VBK", "hall": "Forsgrenska, Södermalm", "div": "2", "omgang": "24" },
+    { "datum": "2027-02-06", "tid": "12:00", "hemma": "IK Sätra", "borta": "Pamir VBK", "hall": "Forsgrenska, Södermalm", "div": "2", "omgang": "24" },
+    { "datum": "2027-03-06", "tid": "11:30", "hemma": "Uppsala VBS D", "borta": "Pamir VBK", "hall": "Bolandsskolan, Uppsala", "div": "2", "omgang": "34" },
+    { "datum": "2027-03-06", "tid": "13:45", "hemma": "Solna VBK B", "borta": "Pamir VBK", "hall": "Bolandsskolan, Uppsala", "div": "2", "omgang": "34" },
+    { "datum": "2027-03-14", "tid": "10:15", "hemma": "Hästhagen IF C", "borta": "Pamir VBK", "hall": "Campushallarna, Nacka strand", "div": "2", "omgang": "38" },
+    { "datum": "2027-03-14", "tid": "12:30", "hemma": "Sollentuna VK Draget", "borta": "Pamir VBK", "hall": "Campushallarna, Nacka strand", "div": "2", "omgang": "38" },
+    { "datum": "2027-03-21", "tid": "13:15", "hemma": "Pamir VBK", "borta": "IK Sätra", "hall": "Lugnets Sporthall D, Falun", "div": "2", "omgang": "36" },
+    { "datum": "2027-03-21", "tid": "15:30", "hemma": "Falu VK", "borta": "Pamir VBK", "hall": "Lugnets Sporthall D, Falun", "div": "2", "omgang": "36" },
+    { "datum": "2027-04-03", "tid": "12:00", "hemma": "Pamir VBK B", "borta": "Sollentuna VK D", "hall": "Silverdalshallen, Sollentuna", "div": "3", "omgang": "24" }
+  ],
+  "spelade": [
+    { "datum": "2026-10-03", "hemma": "Pamir VBK", "borta": "Säters IF VBK B", "hs": "3", "bs": "1", "sets": "17-25, 25-12, 27-25, 25-10", "hall": "Silverdalshallen, Sollentuna", "div": "2", "omgang": "3" },
+    { "datum": "2026-10-03", "hemma": "Östersund Volley", "borta": "Pamir VBK B", "hs": "1", "bs": "3", "sets": "11-25, 15-25, 27-25, 13-25", "hall": "Skarpängshallen, Täby", "div": "3", "omgang": "9" },
+    { "datum": "2026-10-03", "hemma": "Pamir VBK", "borta": "Södermalms VBK D", "hs": "3", "bs": "0", "sets": "25-22, 25-19, 25-20", "hall": "Silverdalshallen, Sollentuna", "div": "2", "omgang": "3" }
+  ],
+  "tabeller": {
+    "div2": {
+      "titel": "Division 2 Mellersta Östra Herrar",
+      "uppdaterad": "",
+      "rader": [
+        { "plats": "1", "lag": "IK Sätra", "poang": "9", "s": "4", "v": "3", "f": "1" },
+        { "plats": "2", "lag": "Pamir VBK", "poang": "6", "s": "2", "v": "2", "f": "0" },
+        { "plats": "3", "lag": "Uppsala VBS D", "poang": "6", "s": "2", "v": "2", "f": "0" },
+        { "plats": "4", "lag": "Södermalms VBK D", "poang": "3", "s": "2", "v": "1", "f": "1" },
+        { "plats": "5", "lag": "Sollentuna VK Draget", "poang": "3", "s": "2", "v": "1", "f": "1" },
+        { "plats": "6", "lag": "Solna VBK B", "poang": "0", "s": "2", "v": "0", "f": "2" },
+        { "plats": "7", "lag": "Säters IF VBK B", "poang": "0", "s": "4", "v": "0", "f": "4" },
+        { "plats": "8", "lag": "KTH VBF", "poang": "0", "s": "0", "v": "0", "f": "0" },
+        { "plats": "8", "lag": "Falu VK", "poang": "0", "s": "0", "v": "0", "f": "0" },
+        { "plats": "8", "lag": "Hästhagen IF C", "poang": "0", "s": "0", "v": "0", "f": "0" },
+        { "plats": "8", "lag": "Västerås VBK", "poang": "0", "s": "0", "v": "0", "f": "0" }
+      ]
+    },
+    "div3": {
+      "titel": "Division 3 Östra, Nord Herrar",
+      "uppdaterad": "",
+      "rader": []
+    }
+  }
+};
+</script>
+<script src="innehall.js"></script>
+<script>
+(function () {
+  var P = window.PAMIR || {};
+
+  // ---------- Hjälpfunktioner ----------
+  var DAG = ['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
+  var MAN = ['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined && text !== null) e.textContent = text;
+    return e;
+  }
+  function get(path) {
+    return path.split('.').reduce(function (o, k) { return o && o[k] !== undefined ? o[k] : undefined; }, P);
+  }
+  function parse(d, t) {
+    var a = String(d || '').split('-'), b = String(t || '00:00').split(':');
+    return new Date(+a[0], (+a[1] || 1) - 1, +a[2] || 1, +b[0] || 0, +b[1] || 0);
+  }
+  function datumLang(d) { var x = parse(d); return DAG[x.getDay()] + ' ' + x.getDate() + ' ' + MAN[x.getMonth()] + ' ' + x.getFullYear(); }
+  function datumKort(d) { var x = parse(d); return DAG[x.getDay()].slice(0, 3) + ' ' + x.getDate() + ' ' + MAN[x.getMonth()]; }
+  function lagEl(namn) { return el('span', /^pamir vbk/i.test(namn || '') ? 'vi' : '', namn); }
+  function divText(d) { return 'Div ' + d; }
+
+  // ---------- Vanliga texter ----------
+  document.querySelectorAll('[data-text]').forEach(function (e) {
+    var v = get(e.getAttribute('data-text'));
+    if (typeof v === 'string' && v) e.textContent = v;
+  });
+
+  // ---------- Kontakt ----------
+  var k = P.kontakt || {};
+  if (k.epost) { var ke = document.getElementById('k-epost'); ke.textContent = k.epost; ke.href = 'mailto:' + k.epost; }
+  if (k.instagram) {
+    var ki = document.getElementById('k-insta'); ki.textContent = k.instagram;
+    ki.href = 'https://www.instagram.com/' + String(k.instagram).replace('@', '') + '/';
+  }
+  if (k.hall) { document.getElementById('k-hall').textContent = k.hall; }
+
+  // ---------- Träningar ----------
+  if (P.traning && P.traning.pass && P.traning.pass.length) {
+    var pl = document.getElementById('passlista'); pl.textContent = '';
+    P.traning.pass.forEach(function (p) {
+      var li = el('li'); li.appendChild(el('strong', '', p.dag));
+      var sp = el('span'); sp.appendChild(el('em', '', p.tid)); sp.appendChild(document.createTextNode(p.plats || ''));
+      li.appendChild(sp); pl.appendChild(li);
+    });
+  }
+
+  // ---------- Kommande matcher (gamla matcher försvinner av sig själva) ----------
+  var nu = Date.now();
+  var kommande = (P.matcher || []).filter(function (m) {
+    return parse(m.datum, m.tid).getTime() + 150 * 60000 >= nu;   // 2,5 tim efter start räknas som spelad
+  }).sort(function (a, b) { return parse(a.datum, a.tid) - parse(b.datum, b.tid); });
+
+  // Nästa match-kortet
+  if (kommande.length) {
+    var n = kommande[0];
+    document.getElementById('nextMatchTitle').textContent = n.hemma + ' – ' + n.borta;
+    document.getElementById('nextMatchInfo').textContent = datumLang(n.datum) + ' kl. ' + n.tid + ' · ' + n.hall;
+  } else {
+    document.getElementById('nextMatchTitle').textContent = 'Inga matcher inlagda just nu';
+    document.getElementById('nextMatchInfo').textContent = 'Se hela spelschemat hos Profixio';
+  }
+
+  var pk = document.getElementById('p-kommande');
+  if (!kommande.length) {
+    pk.appendChild(el('div', 'tomt', 'Inga kommande matcher är inlagda just nu. Se hela spelschemat hos Profixio nedan.'));
+  } else {
+    var grupper = [], senaste = null;
+    kommande.forEach(function (m) {
+      if (senaste !== m.datum) { grupper.push({ datum: m.datum, rader: [] }); senaste = m.datum; }
+      grupper[grupper.length - 1].rader.push(m);
+    });
+    grupper.forEach(function (g, i) {
+      var box = el('div', 'grupp');
+      box.appendChild(el('h3', 'dagrubrik', datumLang(g.datum)));
+      var ul = el('ul', 'matchlista');
+      g.rader.forEach(function (m) {
+        var li = el('li');
+        var t = el('div', 'match__tid'); t.appendChild(el('strong', '', m.tid)); if (m.omgang) t.appendChild(el('span', '', 'Omgång ' + m.omgang));
+        var l = el('div', 'match__lag'); l.appendChild(lagEl(m.hemma)); l.appendChild(document.createTextNode(' – ')); l.appendChild(lagEl(m.borta));
+        li.appendChild(t); li.appendChild(l); li.appendChild(el('div', 'match__plats', m.hall)); li.appendChild(el('div', 'match__div', divText(m.div)));
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+      if (i >= 4) box.hidden = true;
+      pk.appendChild(box);
+    });
+    if (grupper.length > 4) {
+      var mer = el('button', 'knapp knapp--ram visamer', 'Visa fler matcher');
+      mer.type = 'button';
+      mer.addEventListener('click', function () {
+        pk.querySelectorAll('.grupp[hidden]').forEach(function (g) { g.hidden = false; });
+        mer.hidden = true;
+      });
+      pk.appendChild(mer);
+    }
+  }
+
+  // ---------- Spelade matcher (resultat) ----------
+  var ps = document.getElementById('p-spelade');
+  var spelade = (P.spelade || []).slice().sort(function (a, b) { return parse(b.datum) - parse(a.datum); });
+  if (!spelade.length) {
+    ps.appendChild(el('div', 'tomt', 'Inga resultat inlagda ännu.'));
+  } else {
+    var ul2 = el('ul', 'matchlista');
+    spelade.forEach(function (m) {
+      var li = el('li');
+      var t = el('div', 'match__tid'); t.appendChild(el('strong', '', datumKort(m.datum))); if (m.omgang) t.appendChild(el('span', '', 'Omgång ' + m.omgang));
+      var l = el('div', 'match__lag');
+      l.appendChild(lagEl(m.hemma));
+      l.appendChild(el('span', 'resultat', (m.hs || '0') + ' – ' + (m.bs || '0')));
+      l.appendChild(lagEl(m.borta));
+      if (m.sets) l.appendChild(el('small', 'sets', 'Set: ' + m.sets));
+      li.appendChild(t); li.appendChild(l); li.appendChild(el('div', 'match__plats', m.hall)); li.appendChild(el('div', 'match__div', divText(m.div)));
+      ul2.appendChild(li);
+    });
+    ps.appendChild(ul2);
+  }
+
+  // ---------- Tabeller ----------
+  function tabell(id, data) {
+    var rot = document.getElementById(id);
+    var kort = el('div', 'tabellkort');
+    kort.appendChild(el('h3', '', (data && data.titel) || ''));
+    if (!data || !data.rader || !data.rader.length) {
+      kort.appendChild(el('p', 'tomt', 'Tabellen är inte inlagd ännu. Se Profixio för aktuell tabell.'));
+      rot.appendChild(kort); return;
+    }
+    var yta = el('div', 'tabellyta'), tb = el('table', 'tabell');
+    var th = el('thead'), hr = el('tr');
+    ['#', 'Lag', 'Poäng', 'S', 'V', 'F'].forEach(function (h, i) {
+      var c = el('th', '', h);
+      if (i === 3) c.title = 'Spelade'; if (i === 4) c.title = 'Vunna'; if (i === 5) c.title = 'Förlorade';
+      hr.appendChild(c);
+    });
+    th.appendChild(hr); tb.appendChild(th);
+    var body = el('tbody');
+    data.rader.forEach(function (r) {
+      var tr = el('tr', /^pamir vbk/i.test(r.lag || '') ? 'vi' : '');
+      [r.plats, r.lag, r.poang, r.s, r.v, r.f].forEach(function (v) { tr.appendChild(el('td', '', v)); });
+      body.appendChild(tr);
+    });
+    tb.appendChild(body); yta.appendChild(tb); kort.appendChild(yta);
+    var not = 'S = spelade, V = vunna, F = förlorade.';
+    if (data.uppdaterad) not = 'Senast uppdaterad: ' + data.uppdaterad + '. ' + not;
+    kort.appendChild(el('p', 'tabellnot', not));
+    rot.appendChild(kort);
+  }
+  var tb = P.tabeller || {};
+  tabell('t-div2', tb.div2);
+  tabell('t-div3', tb.div3);
+
+  // ---------- Flikar ----------
+  document.querySelectorAll('[data-flik]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var g = b.getAttribute('data-grupp');
+      document.querySelectorAll('[data-grupp="' + g + '"]').forEach(function (x) {
+        x.classList.remove('aktiv'); x.setAttribute('aria-selected', 'false');
+        document.getElementById(x.getAttribute('data-flik')).hidden = true;
+      });
+      b.classList.add('aktiv'); b.setAttribute('aria-selected', 'true');
+      document.getElementById(b.getAttribute('data-flik')).hidden = false;
+    });
+  });
+
+  // ---------- Mobilmeny ----------
   var knapp = document.getElementById('burgare');
   var meny = document.getElementById('meny');
   knapp.addEventListener('click', function () {
-    var öppen = meny.classList.toggle('öppen');
-    knapp.setAttribute('aria-expanded', öppen);
+    var oppen = meny.classList.toggle('öppen');
+    knapp.setAttribute('aria-expanded', oppen);
   });
   meny.addEventListener('click', function (e) {
     if (e.target.tagName === 'A') { meny.classList.remove('öppen'); knapp.setAttribute('aria-expanded', false); }
   });
-
-  // Skript som automatiskt filtrerar bort passerade matcher
-  (function updateNextMatch() {
-    const matches = [
-      { title: "Pamir VBK – Säters IF VBK", date: "2026-11-07T14:00:00", info: "Lördag 7 nov kl. 14:00 · Silverdalshallen" },
-      { title: "Pamir VBK – KTH VBF", date: "2026-11-21T14:00:00", info: "Lördag 21 nov kl. 14:00 · Silverdalshallen" }
-    ];
-
-    const now = new Date();
-    const upcoming = matches.filter(m => new Date(m.date) >= now).sort((a,b) => new Date(a.date) - new Date(b.date));
-
-    const titleEl = document.getElementById('nextMatchTitle');
-    const infoEl = document.getElementById('nextMatchInfo');
-
-    if (upcoming.length > 0) {
-      titleEl.textContent = upcoming[0].title;
-      infoEl.textContent = upcoming[0].info;
-    } else {
-      titleEl.textContent = "Inga kommande matcher just nu";
-      infoEl.textContent = "Se hela spelschemat hos Profixio nedan";
-    }
-  })();
+})();
 </script>
 </body>
 </html>
